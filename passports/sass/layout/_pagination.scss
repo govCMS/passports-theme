@@ -1,0 +1,12 @@
+// Styling for the pagination.
+#main {
+  ul.pager {
+    margin: 0;
+    padding: 30px 0 20px;
+    border-top: 1px dotted black;
+    background: none;
+    .pager-current {
+      background-color: $primary-dark-blue;
+    }
+  }
+}

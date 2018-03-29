@@ -1,0 +1,227 @@
+/**
+ * Styling for the mobile menu section.
+ */
+
+ .region-mobile-nav-container {
+  padding: 20px 0 0;
+  display: block;
+  background-color: $primary-dark-blue;
+  min-height: 70px;
+  @include breakpoint(large) {
+    display: none;
+  }
+  .region-mobile-nav {
+    width: 100%;
+    height: 100%;
+    background-color: $primary-dark-blue;
+    color: $primary-white;
+    .menu-block-wrapper {
+      a {
+        color: $primary-white;
+        // Menu open/close.
+        &.menu-opener {
+          display: block;
+          padding: 5px;
+          width: 30px;
+          height: 30px;
+          background-color: $primary-aqua;
+          margin: 0 0 20px 20px;
+          &:hover,
+          &:focus {
+            background-color: $secondary-aqua;
+          }
+          .lines {
+            position: relative;
+            display: block;
+            width: 20px;
+            height: 20px;
+            .line {
+              display: block;
+              background: $primary-white;
+              width: 20px;
+              height: 4px;
+              position: absolute;
+              left: 0;
+              transition: all 0.4s; 
+              &.line-1 {
+                top: 0;
+              }
+              &.line-2 {
+                top: 8px;
+              }
+              &.line-3 {
+                top: 16px;
+              }
+            }
+          }
+          &.close {
+            .line-1 {
+              transform: translateY(8px) translateX(0) rotate(45deg);
+            } 
+            .line-2 {
+              opacity: 0;
+            }
+            .line-3 {
+              transform: translateY(-8px) translateX(0) rotate(-45deg);
+            }
+          }
+        }
+  
+        // Child menu expand/collapse.
+        &.menu-expander {
+          position: absolute;
+          right: 0;
+          top: 0;
+          display: inline-block;
+          width: 57px;
+          height: 57px;
+          margin-left: 10px;
+          padding: 20px;
+          border-left: 1px solid $primary-aqua;
+          &:hover,
+          &:focus {
+            background-color: $primary-aqua;
+          }
+          &:before,
+          &:after {
+            content: '';
+            position: absolute;
+            background-color: $primary-white;
+            transition: transform 0.25s ease-out;
+          }
+      
+          // Vertical line.
+          &:before {
+            top: 33%;
+            left: 48%;
+            width: 4px;
+            height: 20px;
+            margin-left: -1px;
+          }
+      
+          // Horizontal line.
+          &:after {
+            top: 49%;
+            left: 32%;
+            width: 20px;
+            height: 4px;
+            margin-top: -1px;
+          }
+          
+          &.collapse {
+            cursor: pointer;
+            &:before {
+              transform: rotate(90deg);
+            }
+            &:after {
+              transform: rotate(180deg);
+            }
+            background-color: $tertiary-aqua;
+          }
+          &:hover,
+          &:focus {
+            background-color: $secondary-aqua;
+          }
+        }
+      }
+
+      // Dropdown Nav
+      ul {
+        display: none;
+        margin: 0;
+        width: 100%;
+        li.menu__item {
+          position: relative;
+          margin: 0;
+          padding: 0;
+          border-bottom: 1px solid $primary-aqua;
+          &.active-trail > a.menu__link {
+            background-color: $primary-aqua;
+          }
+          &:first-child {
+            border-top: 1px solid $primary-aqua;          
+          }
+          &:last-child {
+            border-bottom: none;
+          }
+          a.menu__link {
+            text-decoration: none;
+            display: inline-block;
+            padding: 20px;
+            width: calc(100% - 57px);
+            &:hover,
+            &:focus {
+              background-color: $secondary-aqua;
+            }
+          }
+          &.is-leaf {
+            a.menu__link {
+              width: 100%;
+            }
+          }
+          ul li {
+            a.menu__link {
+              padding-left: 40px;
+            }
+            ul li {
+              a.menu__link {
+                padding-left: 60px;
+              }
+              ul li {
+                a.menu__link {
+                  padding-left: 80px;
+                }
+                ul li {
+                  a.menu__link {
+                    padding-left: 100px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    // Search Bar Styling
+    .block-search-api-page {
+      position: absolute;
+      height: 30px;
+      top: 20px;
+      right: 20px;
+      width: calc(100% - 90px);
+      max-width: 100%;
+      .form-type-textfield {
+        .form-text {
+          height: 30px;
+          padding: 1px 5px;
+        }
+      }
+      .form-submit {
+        height: 30px;
+        margin: 0;
+        box-shadow: none;
+        background-color: $primary-aqua;
+        background-image: url(../images/icon-search-2x.png);
+        background-size: 18px 18px;
+        box-shadow: none;
+        transition: all 0.2s ease-in-out;
+        &:hover,
+        &:focus {
+          background-color: $secondary-aqua;
+        }
+      }
+    }
+  }
+}
+
+// Show the whole menu for no-js users.
+html.no-js {
+  .region-mobile-nav {
+    .menu-block-wrapper {
+      ul {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+/**
+ * Specifics for the feedback webform.
+ */
+
+form.webform-client-form-76 {
+  .numbers-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .form-item {
+      width: 40%;
+    }
+    .form-number-divider {
+      width: 19%;
+      display: block;
+      font-weight: bold;
+      text-align: center;
+      margin: 25px 0;
+    }
+  }
+}

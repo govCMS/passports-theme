@@ -1,0 +1,17 @@
+name = Passports administration
+description = A sub-theme of the Shiny admin theme for the Passports website.
+core = 7.x
+base theme = shiny
+
+; The main styles file. Use a name that won't override other CSS files.
+stylesheets[all][] = css/passadmin.css
+
+; Mimic the Shiny theme.
+settings[shortcut_module_link] = 1
+regions[content] = Content
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[sidebar_first] = First sidebar
+regions[footer] = Footer
+regions_hidden[] = sidebar_first

@@ -1,0 +1,61 @@
+.header .region-mobile-nav-container {
+  display: none;
+}
+
+.header .header__inner #dfat-logo {
+  display: none;
+}
+
+.header .header__inner #dfat-logo-print {
+  display: block !important;
+  float: left;
+  max-width: 50% !important;
+}
+
+#page #content .region-nav-container {
+  display: none;
+}
+
+#page #content .region-nav-container .block-search-api-page {
+  display: none;
+}
+
+#page #content h1, #page #content h2, #page #content h3, #page #content h4, #page #content h5, #page #content h6 {
+  color: black !important;
+}
+
+#page #content .highlight {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+}
+
+#page #content .highlight p {
+  color: black;
+}
+
+#page #content .highlight a {
+  color: black !important;
+}
+
+#page #content .highlight ul {
+  color: black;
+}
+
+#page #content .view-news li {
+  padding-bottom: 50px !important;
+}
+
+#page .pager {
+  display: none;
+}
+
+#page .view-footer {
+  padding-top: 40px;
+}
+
+.footer-container {
+  display: none;
+}
+
+/*# sourceMappingURL=print.css.map */

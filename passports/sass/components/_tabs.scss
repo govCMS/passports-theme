@@ -1,0 +1,19 @@
+// Styling for tabs on the site.
+
+#main {
+  .tabs {
+    margin: 0 0 20px;
+    li {
+      margin: 0;
+      a {
+        font-weight: 400;
+        &:hover,
+        &:focus {
+          font-weight: 500;
+          background-color: $secondary-pale-green;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

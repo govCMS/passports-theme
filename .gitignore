@@ -1,0 +1,11 @@
+# Theme development files.
+passports/node_modules
+passadmin/node_modules
+
+# System files.
+.DS_Store
+Thumbs.db
+
+# Editor files.
+.idea
+

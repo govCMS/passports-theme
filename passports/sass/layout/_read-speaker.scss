@@ -1,0 +1,23 @@
+// Styling for the read speaker.
+
+.breadcrumbs-wrapper {
+  position: relative;
+  .pnlSpeakerClass {
+    max-width: 1020px;
+    margin: 0 auto;
+    #readspeaker_button1 {
+      @include breakpoint(small) {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        padding: 0;
+      }
+      a.rsbtn_play {
+        padding: 20px 0 0;
+        @include breakpoint(small) {
+          padding: 0;
+        }
+      }
+    }
+  } 
+}

@@ -1,0 +1,114 @@
+// styling for the search results page
+
+#main {
+  #search-api-page-search-form {
+    .form-type-textfield {
+      display: inline-block;
+      margin: 0;
+      input {
+        padding: 1px 5px;
+        height: 27px;
+        background-color: $primary-white;
+        width: 15rem;
+      }
+    }
+    .form-submit {
+      width: 25px;
+      height: 27px;
+      vertical-align: bottom;
+      background-color: $primary-aqua;
+      background-image: url(../images/icon-search-2x.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0 0 0 -20px;
+      padding: 0;
+      font-size: 1rem;
+      background-size: 18px 18px;
+      box-shadow: none;
+      color: transparent;
+      transition: all 0.2s ease-in-out;
+      &:hover,
+      &:focus {
+        background-color: $secondary-aqua;
+      }
+    }
+  }
+  .search-api-page-results {
+    .search-results {
+      padding: 0;
+      margin: 0;
+      .search-result {
+        padding: 0 0 15px;
+        @include breakpoint(xsmall) {
+          padding: 0 0 40px;
+        }
+        border-top: 1px dotted black;
+        margin: 0;
+        position: relative;
+        h3.title {
+          padding: 0;
+          margin: 0 0 10px;
+          @extend h3;
+          a {
+            @extend h3;
+            color: $primary-aqua;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            &:hover,
+            &:focus {
+              text-decoration: underline;
+              color: $tertiary-aqua;
+            }
+          }
+        }
+        .search-snippet {
+          font-style: normal;
+        }
+        .search-info {
+          .last-updated {
+            display: inline-block;
+            margin: 10px 0;
+            @include breakpoint(xsmall) {
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              margin: 0;
+            }
+            background-color: $secondary-pale-green;
+            padding: 5px 10px;
+            font-style: normal;
+            .label {
+              width: auto;
+              font-weight: 400;
+              padding-right: 5px;
+            }
+          }
+          .read-more {
+            display: block;
+            @include breakpoint(xsmall) {
+              position: absolute;
+              right: 0;
+              bottom: 0;
+            }
+            padding: 5px 0;
+            font-style: normal;
+            a {
+              height: 100%;
+              width: 100%;
+              padding: 5px 10px;
+              background-color: $primary-aqua;
+              color: $primary-white;
+              text-decoration: none;
+              transition: all 0.2s ease-in-out;
+              &:hover,
+              &:focus {
+                color: $primary-white;
+                background-color: $secondary-aqua;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+// Styling for the forms sections of the website.
+
+#page {
+  #main {
+    form {
+      border: none;
+      padding: 0;
+      overflow: auto;
+      .form-item {
+        margin: 20px 0;
+        .form-item {
+          margin-right: 10px;
+        }
+        .description {
+          padding: 2px;
+          margin: 0;
+        }
+        &.form-item-checkbox,
+        &.form-item-checkboxes,
+        &.form-type-radio,
+        &.form-type-checkbox {
+          padding-left: 1px;
+          margin: 10px 0;
+        }
+        &.webform-component-select {
+          label {
+            vertical-align: top;
+          }
+          select {
+            option {
+              padding: 0 5px;
+            }
+          }
+        }
+      }
+      input {
+        border-radius: 2px;
+        margin-right: 10px;
+      }
+      input[type=text] {
+        background-color: $primary-white;
+        border: 1px solid black;
+      }
+      legend {
+        padding: 5px 10px;
+        border: none;
+        font-weight: 600;
+      }
+      label {
+        margin-right: 10px;
+      }
+    }
+  }
+}

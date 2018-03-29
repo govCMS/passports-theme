@@ -1,0 +1,30 @@
+// Styling for the breadcrumbs.
+
+.breadcrumbs-wrapper {
+  max-width: 1020px;
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: none;
+  padding: 20px 20px 0;
+  .breadcrumb {
+    padding: 0;
+    border-bottom: none;
+    ol {
+      @include breakpoint(small) {
+        margin-right: 150px;
+      }
+      li {
+        margin-right: 10px;
+        a {
+          padding-right: 10px;
+          font-weight: 400;
+          color: $primary-aqua;
+          &:hover,
+          &:focus {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}

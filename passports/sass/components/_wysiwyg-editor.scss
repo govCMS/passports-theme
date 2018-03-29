@@ -1,0 +1,8 @@
+/**
+ * Styles for elements inside the WYSIWYG editor.
+ */
+
+body.cke_editable {
+  // Don't use flex.
+  display: block;
+}

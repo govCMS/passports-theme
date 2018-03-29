@@ -1,0 +1,53 @@
+@charset 'UTF-8';
+// Add any styles you wish to use here.
+// This file should be processed using SASS, and will generate
+// CSS files in the CSS folder.
+
+// variables
+
+// Abstracts.
+@import
+  'utils/variables',
+  'utils/mixins/breakpoints',
+  'utils/mixins/rem',
+  'utils/mixins/clearfix';
+
+// Base styles.
+@import
+  'base/typography',
+  'base/clearfix';
+
+// Layout styles of the page.
+@import 
+  'layout/header',
+  'layout/breadcrumbs',
+  'layout/read-speaker',
+  'layout/layout',
+  'layout/highlights',
+  'layout/blockquotes',
+  'layout/media',
+  'layout/tables',
+  'layout/pagination',
+  'layout/footer';
+
+// Pages styling.
+@import
+  'pages/feedback',
+  'pages/home',
+  'pages/news',
+  'pages/search',
+  'pages/supplementary-forms',
+  'pages/node-page',
+  'pages/maintenance';
+
+// Components.
+@import
+  'components/wysiwyg-editor',
+  'components/mobile-menu',
+  'components/buttons',
+  'components/bean',
+  'components/application-process',
+  'components/messages',
+  'components/tabs',
+  'components/forms',
+  'components/legacy';

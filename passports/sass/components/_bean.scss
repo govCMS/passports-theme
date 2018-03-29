@@ -1,0 +1,213 @@
+// Styling for bean entities.
+.not-front {
+  #main {
+    .entity-bean {
+      border: 1px solid black;
+      &.bean-icon {
+        a {
+          border-bottom: none;
+        }
+      }
+      margin: 0 0 20px;
+    }
+  }
+}
+
+#main {
+  .gov-front-lower {
+    .panel-pane {
+      margin: 20px 0 0;
+    }
+  }
+  .block__content {
+    padding: 0;
+  }
+  .field-name-field-bean-image {
+    margin: 0;
+  }
+  .entity-bean {
+    width: 100%;
+    &.bean-icon {
+      a.wrapper-link {
+        color: black;
+        text-decoration: none;
+        padding: 10px 20px;
+        display: block;
+        border-bottom: 1px dotted black;
+        position: relative;
+        transition: all 0.2s ease-in-out;
+        @include breakpoint(large) {
+          padding: 10px;
+        }
+        .field-name-field-bean-image {
+          margin: 0;
+          img {
+            position: absolute;
+            top: 17px;
+            left: 20px;
+            @include breakpoint(large) {
+              left: 10px;
+            }
+          }
+        }
+        .field-type-text-long {
+          margin: 20px 0;
+          display: none;
+          @include breakpoint(large) {
+            display: block;
+          }
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          background-image: url(../images/arrow-right-icon-dark.png);
+          background-size: 6px 10px;
+          background-repeat: no-repeat;
+          height: 10px;
+          width: 6px;
+          right: 20px;
+          bottom: 40%;
+          @include breakpoint(large) {
+            right: 5px;
+            bottom: 10px;
+          }
+        }
+        h3 {
+          margin-left: 70px;
+          @include breakpoint(large) {
+            margin-left: 60px;
+          }
+        }
+        &:hover,
+        &:focus {
+          background-color: $secondary-pale-green;
+        }
+      }
+    }
+    &.bean-basic {
+      background-color: $primary-white;
+      h3.bean-title {
+        width: 100%;
+        font-size: 1rem;
+        background-color: $primary-dark-blue;
+        color: $primary-white;
+        margin: 0;
+        padding: 15px 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+      .content {
+        padding: 20px;
+        .field-name-field-bean-text {
+          margin: 0;
+          padding: 0;
+        }
+      }
+      a {
+        text-decoration: none;
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+      ul {
+        margin: 0;
+        list-style-type: none;
+        li {
+          background-image: url(../images/icon-list-arrow-right-dark.png);
+          background-repeat: no-repeat;
+          background-size: 5px 5px;
+          background-position: left 6px;
+          padding-left: 20px;
+          margin-bottom: 5px;
+        }
+      }
+    }
+    &.bean-link {
+      h3.bean-title {
+        color: $primary-white;
+      }
+      a.wrapper-link  {
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+        color: $primary-white;
+        background: radial-gradient($quarternary-aqua, $tertiary-aqua);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: 50% 50%;
+        &:hover,
+        &:focus {
+          background: radial-gradient($quarternary-aqua, $secondary-dark-blue);
+        }
+      }
+      .field-name-field-block-category {
+        padding: 20px 0;
+        margin: 0 20px;
+        border-bottom: 1px dotted $primary-white;
+        text-transform: uppercase;
+      }
+      h3.bean-title {
+        padding: 20px;
+        margin: 0;
+      }
+    }
+    &.bean-image {
+      background-color: $primary-white;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        height: 100%;
+        width: 100%;
+      }
+      h3.bean-title {
+        width: 100%;
+        font-size: 1rem;
+        background-color: $primary-dark-blue;
+        color: $primary-white;
+        margin: 0;
+        padding: 15px 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+      a.wrapper-link {
+        text-decoration: none;
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+          transition: all 0.2s ease-in-out;
+          img {
+            transition: all 0.2s ease-in-out;
+            filter: contrast(1.1);
+          }
+        }
+      }
+      .field-name-field-bean-text {
+        margin: 0;
+        padding: 20px;
+      }
+    }
+    &.bean-video {
+      background-color: $primary-white;
+      .field-name-field-video-embed {
+        margin: 0;
+      }
+      h3.bean-title {
+        width: 100%;
+        font-size: 1rem;
+        background-color: $primary-dark-blue;
+        color: $primary-white;
+        margin: 0;
+        padding: 15px 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+      iframe {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+  }
+}

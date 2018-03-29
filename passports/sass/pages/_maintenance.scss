@@ -1,0 +1,51 @@
+// Styling for the maintenance page.
+
+body.maintenance-page {
+  background-color: $primary-white;
+  @include breakpoint(small) {
+    background-color: $primary-grey;
+    padding: 100px;
+  }
+  .centered-box {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    .header {
+      .header__logo {
+        float: none;
+      }
+      padding: 0;
+      a {
+        margin: 0 auto;
+        max-width: 100%;
+      }
+      img {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+      }
+    }
+    @include breakpoint(small) {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 0;
+      border: 1px solid black;
+      .header {
+        padding: 20px;
+        a {
+          max-width: 100%;
+          margin: 0;
+        }
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+  #page {
+    #main {
+      text-align: left;
+    }
+  }
+}

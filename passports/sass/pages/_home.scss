@@ -1,0 +1,168 @@
+// Styling for the home page.
+
+.front {
+  #main {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    @include breakpoint(large) {
+      max-width: 100%;
+      width: 100%;
+      margin: 0;
+    }
+    .gov-front-layout {
+      .gov-front-main {
+        @extend %clearfix;
+        max-width: 1020px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        @include breakpoint(large) {
+          padding: 20px;
+        }
+        .gov-front-main-inner {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          .pane-bean-icon {
+            width: 100%;
+            @include breakpoint(large) {
+              width: 31%;
+            }
+            height: 100%;
+            border-top: none;
+            @include breakpoint(large) {
+              margin-bottom: 20px;
+            }
+          }
+        }
+      }
+      .gov-front-lower {
+        @extend %clearfix;
+        width: 100%;
+        background-color: $primary-light-green;
+        & * {
+          border-top: 0;
+        }
+        .gov-front-lower-inner {
+          @extend %clearfix;
+          max-width: 1020px;
+          width: 100%;
+          margin: 0 auto;
+          padding: 20px;
+          .gov-front-left {
+            width: 100%;
+            @include breakpoint(small) {
+              width: 70%;
+            }
+            padding: 0;
+            margin: 0;
+            .panel-pane.pane-further-information {
+              border-top: 0;
+              background-color: $primary-pale-green;
+              padding: 10px 20px 20px;
+              margin-bottom: 20px;
+              margin-top: 0;
+              h2.pane-title {
+                margin: 0;
+                border-bottom: 1px dotted black;
+                padding-bottom: 10px;
+              }
+              .panel-display#mini-panel-further_information {
+                .panel-panel div {
+                  display: block;
+                  @include breakpoint(xsmall) {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                  }
+                  .panel-pane {
+                    display: block;
+                    @include breakpoint(xsmall) {
+                      display: inline-block;
+                      width: 48%;
+                    }
+                    @include breakpoint(large) {
+                      width: 31.5%;
+                    }
+                    &.pane-bean-image {
+                      display: block;
+                      div {
+                        display: block;
+                      }
+                    }
+                  }
+                }          
+              }
+            }
+            .panel-pane.pane-news {
+              background-color: $primary-pale-green;
+              padding: 10px 20px 20px;
+              h2.pane-title {
+                margin-top: 0;
+                &::before {
+                  content: url(../images/passports-panel-news.png);
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  padding-right: 10px;
+                }
+              }
+              ul:last-child {
+                border-bottom: 1px dotted black;
+              }
+              .more-link {
+                margin: 20px 0 0;
+                text-align: left;
+                display: inline-block;
+                a {
+                  width: 100%;
+                  height: 100%;
+                  background-color: $primary-aqua;
+                  padding: 5px 10px;
+                  color: white;
+                  text-decoration: none;
+                  transition: all 0.2s ease-in-out;
+                  &:hover,
+                  &:focus {
+                    color: $primary-white;
+                    background-color: $secondary-aqua;
+                  }
+                }
+              }
+            }
+          }
+          .gov-front-right {
+            display: block;
+            @include breakpoint(xsmall) {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+            }
+            width: 100%;
+            padding: 0;
+            @include breakpoint(small) {
+              width: 30%;
+              padding: 0 0 0 20px;
+            }
+            margin: 0;
+            .panel-pane {
+              width: 100%;
+              @include breakpoint(xsmall) {
+                width: 48%;
+              }
+              @include breakpoint(small) {
+                width: 100%;
+              }
+              &:first-child {
+                @include breakpoint(small) {
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }  
+  }
+}

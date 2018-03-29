@@ -1,0 +1,48 @@
+// Styling for the buttons (and anchor tags with button class).
+
+button {
+  margin: 20px 0;
+  padding: 7px 10px;
+  display: block;
+  text-align: center;
+  color: $primary-white;
+  background-color: $primary-aqua;
+  box-shadow: none;
+  transition: all 0.2s ease-in-out;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  @include breakpoint(small) {
+    display: inline-block;
+  }
+  &:visited {
+    background-color: $primary-aqua;
+    color: $primary-white;
+  }
+  &:hover,
+  &:focus {
+    color: $primary-white;
+    background-color: $secondary-aqua;
+  }
+  &:active {
+    box-shadow: black;
+  }
+}
+
+input[type=image] {
+  height: 50px;
+  padding: 5px 10px;
+  &.webform-calendar {
+    height: 20px;
+    padding: 0;
+    vertical-align: middle;
+  }
+}
+
+a.button,
+.form-submit {
+  @extend button;
+}
+
+a#edit-cancel {
+  margin: 20px;
+}

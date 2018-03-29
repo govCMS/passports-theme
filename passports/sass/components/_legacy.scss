@@ -1,0 +1,111 @@
+// Styling for the website that fixes the breaks in legacy browsers.
+
+html.lte-ie9 {
+  .region-nav-container {
+    .region-navigation {
+      display: block;
+      .contextual-links-region {
+        display: inline-block;
+        &.first {
+          width: 85%;
+        }
+        .block__content {
+          display: inline-block;
+        }
+      }
+      ul.sf-main-menu {
+        display: inline-block;
+        width: 100%;
+        li {
+          height: 100%;
+          display: table-cell;
+          width: 12.5%;
+          > ul {
+            display: block;
+            li {
+              display: block;
+              width: 100%;
+            }
+          }
+        }
+      }
+      .block-search-api-page {
+        width: 14.5%;
+        height: 100%;
+        vertical-align: top;
+        .block__content {
+          height: 100%;
+          form {
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+  }
+  #page {
+    #main {
+      .gov-front-main {
+        .gov-front-main-inner {
+          display: table;
+          .panel-pane.pane-block {
+            display: inline-table;
+            width: 100%;
+            @include breakpoint(large) {
+              margin: 0 5px;
+              width: 32%;
+            }
+          }
+        }
+      }
+      .gov-front-lower {
+        .gov-front-lower-inner {
+          .gov-front-left {
+            .panel-display#mini-panel-further_information {
+              margin-top: 10px;
+              .panel-pane.pane-block {
+                display: block;
+                width: 100%;
+                margin: 10px;
+                @include breakpoint(smedium) {
+                  vertical-align: top;
+                  display: inline-block;
+                  width: 31.5%;
+                  margin: 5px;
+                }
+              }
+              .entity-bean {
+                &.bean-link {
+                  a.wrapper-link {
+                    background-color: $tertiary-aqua;
+                    &:hover,
+                    &:focus {
+                      background-color: $secondary-dark-blue;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .footer-container {
+      .region-footer#footer {
+        width: 100%;
+        display: block;
+        padding: 0;
+        @include breakpoint(smedium) {
+          padding: 0 20px;
+          display: table;
+        }
+        .block {
+          display: block;
+          @include breakpoint(smedium) {
+            display: table-cell;
+            width: 25%;
+          }
+        }
+      }
+    }
+  }
+}

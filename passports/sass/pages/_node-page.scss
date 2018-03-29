@@ -1,0 +1,44 @@
+// Styling for node pages of type "page".
+
+.node {
+  &.ds-2col-fluid {
+    .field {
+      margin: 0;
+    }
+    &.group-one-column {
+      .group-left {
+        width: 100%;
+        float: none;
+        padding-right: 0;
+      }
+      .group-right {
+        width: 100%;
+        float: none;
+        padding-left: 0;
+      }
+    }
+    .group-left {
+      width: 100%;
+      float: none;
+      padding-right: 0;
+    }
+    .group-right {
+      width: 100%;
+      float: none;
+      padding-left: 0;
+      padding-top: 20px;
+    }
+    @include breakpoint(small) {
+      .group-left {
+        float: left;
+        width: 70%;
+        padding-right: 10px;
+      }
+      .group-right {
+        float: right;
+        width: 30%;
+        padding-left: 10px;
+      }
+    }
+  }
+}

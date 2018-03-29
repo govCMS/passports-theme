@@ -1,0 +1,59 @@
+// Styling for the printing page.
+.header {
+  .region-mobile-nav-container {
+    display: none;
+  }
+  .header__inner {
+    #dfat-logo {
+      display: none;
+    }
+    #dfat-logo-print {
+      display: block !important;
+      float: left;
+      max-width: 50% !important;
+    }
+  }
+}
+#page {
+  #content {
+    .region-nav-container {
+      display: none;
+      .block-search-api-page {
+        display: none;
+      }
+    }
+    
+    h1, h2, h3, h4, h5 ,h6 {
+      color: black !important;
+    }
+    
+    .highlight {
+      color: black;
+      p {
+        color: black;
+      }
+      background-color: white;
+      border: 1px solid black;
+      a {
+        color: black !important;
+      }
+      ul {
+        color: black;
+      }
+    }
+    .view-news {
+      li {
+        padding-bottom: 50px !important;
+      }
+    }
+  }
+  .pager {
+    display: none;
+  }
+  .view-footer {
+    padding-top: 40px;
+  }
+}
+.footer-container {
+  display: none;
+}
