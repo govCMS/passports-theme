@@ -10,18 +10,20 @@ html {
             li.views-row {
               margin: 0;
               padding: 0;
-              border-top: 1px dotted black;
+              border-top: none;
+              border-bottom: 1px dotted black;
             }
           }
         }
       }
       .view-footer {
         text-align: center;
+        margin-top: 20px;
       }
     }
     .node-news-article {
       position: relative;
-      padding: 0 0 30px;
+      padding: 0 0 25px;
       &.view-mode-teaser {
         margin: 0;
         .field-name-body {

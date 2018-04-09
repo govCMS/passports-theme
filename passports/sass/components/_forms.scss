@@ -2,7 +2,7 @@
 
 #page {
   #main {
-    form {
+    form.webform-client-form {
       border: none;
       padding: 0;
       overflow: auto;
@@ -32,10 +32,30 @@
             }
           }
         }
+        &.webform-component--form-number,
+        &.webform-component--passport-number {
+          margin: 0;
+          display: block;
+          @include breakpoint(medium) {
+            display: inline-block;
+          }
+        }
+        .webform-datepicker {
+          margin-top: 10px;
+        }
+      }
+      .form-number-divider {
+        display: block;
+        margin: 10px 10px 10px 0;
+        @include breakpoint(medium) {
+          display: inline-block;
+          margin: 0 10px 0 0;
+        }
       }
       input {
         border-radius: 2px;
         margin-right: 10px;
+        max-width: 100%;
       }
       input[type=text] {
         background-color: $primary-white;
@@ -47,7 +67,7 @@
         font-weight: 600;
       }
       label {
-        margin-right: 10px;
+        margin: 0 10px 10px 0;
       }
     }
   }

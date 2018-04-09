@@ -3,7 +3,8 @@
 button {
   margin: 20px 0;
   padding: 7px 10px;
-  display: block;
+  display: inline-block;
+  width: 100%;
   text-align: center;
   color: $primary-white;
   background-color: $primary-aqua;
@@ -12,7 +13,7 @@ button {
   font-size: 1.4rem;
   line-height: 1.4rem;
   @include breakpoint(small) {
-    display: inline-block;
+    width: auto;
   }
   &:visited {
     background-color: $primary-aqua;
@@ -41,6 +42,12 @@ input[type=image] {
 a.button,
 .form-submit {
   @extend button;
+}
+
+#search-api-page-search-form {
+  .form-submit {
+    width: auto;
+  }
 }
 
 a#edit-cancel {

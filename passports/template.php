@@ -337,3 +337,23 @@ function passports_js_alter(&$javascript) {
     }
   }
 }
+
+function passports_file_view_alter($build, $type) {
+  // When viewing a file page.
+  if (arg(0) == 'file' && is_numeric(arg(1)) && !arg(2)) {
+    $file = $build['#file'];
+    // For the main image that is being loaded.
+    if ($file->fid == arg(1) && $build['#view_mode'] == 'full') {
+      // Instead of returning the file view page, return the actual file.
+      $headers = file_download_headers($file->uri);
+      if (count($headers)) {
+        // Set the file name, so if a user downloads the file it doesn't save
+        // with the file ID from the URL as the name.
+        $path_parts = pathinfo($file->uri);
+        $headers['Content-Disposition'] = 'inline; filename="' . $path_parts['basename'] . '"';
+        file_transfer($file->uri, $headers);
+      }
+      drupal_exit();
+    }
+  }
+}

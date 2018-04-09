@@ -1,0 +1,33 @@
+/**
+ * Variables declarations.
+ */
+/**
+ * clearfix()
+ *
+ * Allows the bottom of an element to extend to the bottom of all floated
+ * children elements. @see http://nicolasgallagher.com/micro-clearfix-hack/
+ *
+ * We use the micro-clearfix, optimized for use in `@extend` where fewer `&` is
+ * better.
+ */
+/**
+ * Clearfix
+ *
+ * Allows the bottom of an element to extend to the bottom of all floated child
+ * elements. See http://nicolasgallagher.com/micro-clearfix-hack/
+ */
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/**
+ * Styling for forms.
+ */
+form .field-name-field-aside-blocks select {
+  width: 400px;
+  height: 200px;
+}
+
+/*# sourceMappingURL=passadmin.css.map */
