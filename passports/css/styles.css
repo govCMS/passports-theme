@@ -162,6 +162,7 @@ html #main ol li:last-child {
 #header .header__inner a.header__logo#dfat-logo img.header__logo-image {
   display: inline-block;
   margin: 0 auto;
+  width: 407px;
 }
 
 #header .header__inner a.header__logo#apo-logo {
@@ -171,6 +172,7 @@ html #main ol li:last-child {
 #header .header__inner a.header__logo#apo-logo img.header__logo-image {
   display: inline-block;
   margin: 0 auto;
+  width: 298px;
 }
 
 @media (min-width: 840px) {
@@ -780,30 +782,6 @@ body #page .footer-container #footer #block-bean-follow-us .field-name-field-bea
   padding-right: 10px;
 }
 
-/**
- * Specifics for the feedback webform.
- */
-form.webform-client-form-76 .numbers-wrapper {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-  -ms-flex-align: end;
-      align-items: flex-end;
-}
-
-form.webform-client-form-76 .numbers-wrapper .form-item {
-  width: 40%;
-}
-
-form.webform-client-form-76 .numbers-wrapper .form-number-divider {
-  width: 19%;
-  display: block;
-  font-weight: bold;
-  text-align: center;
-  margin: 25px 0;
-}
-
 .front #main {
   max-width: 100%;
   width: 100%;
@@ -948,6 +926,7 @@ form.webform-client-form-76 .numbers-wrapper .form-number-divider {
 
 .front #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-news h2.pane-title {
   margin-top: 0;
+  border-bottom: 1px dotted black;
 }
 
 .front #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-news h2.pane-title::before {
@@ -962,7 +941,7 @@ form.webform-client-form-76 .numbers-wrapper .form-number-divider {
 }
 
 .front #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-news .more-link {
-  margin: 20px 0 0;
+  margin: 25px 0 5px;
   text-align: left;
   display: inline-block;
 }
@@ -1037,16 +1016,18 @@ html #page .view-news .view-content .item-list > ul {
 html #page .view-news .view-content .item-list > ul li.views-row {
   margin: 0;
   padding: 0;
-  border-top: 1px dotted black;
+  border-top: none;
+  border-bottom: 1px dotted black;
 }
 
 html #page .view-news .view-footer {
   text-align: center;
+  margin-top: 20px;
 }
 
 html #page .node-news-article {
   position: relative;
-  padding: 0 0 30px;
+  padding: 0 0 25px;
 }
 
 html #page .node-news-article.view-mode-teaser {
@@ -1151,7 +1132,7 @@ html #page .node-news-article.view-mode-full .field-name-field-news-date {
   background-image: url(../images/icon-search-2x.png);
   background-repeat: no-repeat;
   background-position: center;
-  margin: 0 0 0 -20px;
+  margin: 0 0 0 -3px;
   padding: 0;
   font-size: 1rem;
   background-size: 18px 18px;
@@ -1170,8 +1151,9 @@ html #page .node-news-article.view-mode-full .field-name-field-news-date {
 }
 
 #main .search-api-page-results .search-results .search-result {
-  padding: 0 0 15px;
-  border-top: 1px dotted black;
+  padding: 0 0 10px;
+  border-top: none;
+  border-bottom: 1px dotted black;
   margin: 0;
   position: relative;
 }
@@ -1603,7 +1585,8 @@ button, a.button,
 .form-submit {
   margin: 20px 0;
   padding: 7px 10px;
-  display: block;
+  display: inline-block;
+  width: 100%;
   text-align: center;
   color: #FFF;
   background-color: #0A7888;
@@ -1616,7 +1599,7 @@ button, a.button,
 @media (min-width: 760px) {
   button, a.button,
   .form-submit {
-    display: inline-block;
+    width: auto;
   }
 }
 
@@ -1647,6 +1630,10 @@ input[type=image].webform-calendar {
   height: 20px;
   padding: 0;
   vertical-align: middle;
+}
+
+#search-api-page-search-form .form-submit {
+  width: auto;
 }
 
 a#edit-cancel {
@@ -2028,56 +2015,84 @@ a#edit-cancel {
   text-decoration: underline;
 }
 
-#page #main form {
+#page #main form.webform-client-form {
   border: none;
   padding: 0;
   overflow: auto;
 }
 
-#page #main form .form-item {
+#page #main form.webform-client-form .form-item {
   margin: 20px 0;
 }
 
-#page #main form .form-item .form-item {
+#page #main form.webform-client-form .form-item .form-item {
   margin-right: 10px;
 }
 
-#page #main form .form-item .description {
+#page #main form.webform-client-form .form-item .description {
   padding: 2px;
   margin: 0;
 }
 
-#page #main form .form-item.form-item-checkbox, #page #main form .form-item.form-item-checkboxes, #page #main form .form-item.form-type-radio, #page #main form .form-item.form-type-checkbox {
+#page #main form.webform-client-form .form-item.form-item-checkbox, #page #main form.webform-client-form .form-item.form-item-checkboxes, #page #main form.webform-client-form .form-item.form-type-radio, #page #main form.webform-client-form .form-item.form-type-checkbox {
   padding-left: 1px;
   margin: 10px 0;
 }
 
-#page #main form .form-item.webform-component-select label {
+#page #main form.webform-client-form .form-item.webform-component-select label {
   vertical-align: top;
 }
 
-#page #main form .form-item.webform-component-select select option {
+#page #main form.webform-client-form .form-item.webform-component-select select option {
   padding: 0 5px;
 }
 
-#page #main form input {
-  border-radius: 2px;
-  margin-right: 10px;
+#page #main form.webform-client-form .form-item.webform-component--form-number, #page #main form.webform-client-form .form-item.webform-component--passport-number {
+  margin: 0;
+  display: block;
 }
 
-#page #main form input[type=text] {
+@media (min-width: 980px) {
+  #page #main form.webform-client-form .form-item.webform-component--form-number, #page #main form.webform-client-form .form-item.webform-component--passport-number {
+    display: inline-block;
+  }
+}
+
+#page #main form.webform-client-form .form-item .webform-datepicker {
+  margin-top: 10px;
+}
+
+#page #main form.webform-client-form .form-number-divider {
+  display: block;
+  margin: 10px 10px 10px 0;
+}
+
+@media (min-width: 980px) {
+  #page #main form.webform-client-form .form-number-divider {
+    display: inline-block;
+    margin: 0 10px 0 0;
+  }
+}
+
+#page #main form.webform-client-form input {
+  border-radius: 2px;
+  margin-right: 10px;
+  max-width: 100%;
+}
+
+#page #main form.webform-client-form input[type=text] {
   background-color: #FFF;
   border: 1px solid black;
 }
 
-#page #main form legend {
+#page #main form.webform-client-form legend {
   padding: 5px 10px;
   border: none;
   font-weight: 600;
 }
 
-#page #main form label {
-  margin-right: 10px;
+#page #main form.webform-client-form label {
+  margin: 0 10px 10px 0;
 }
 
 html.lte-ie9 .region-nav-container .region-navigation {
