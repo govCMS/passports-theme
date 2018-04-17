@@ -28,6 +28,41 @@ function passports_preprocess_page(&$variables, $hook) {
 }
 
 /**
+ * Override or insert variables into the node templates.
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("node" in this case.)
+ */
+function passports_process_node(&$variables, $hook) {
+  $node = $variables['node'];
+  // If we're using DS for layout.
+  if ($layout = ds_get_layout('node', $node->type, $variables['view_mode'])) {
+    // For a node, use an article wrapper, like the default node template does.
+    $variables['layout_wrapper'] = 'article';
+    // For our right column, make it an aside, for related content.
+    if ($layout['layout'] == 'ds_2col_fluid') {
+      $variables['right_wrapper'] = 'aside';
+    }
+  }
+}
+
+/**
+ * Implements passports_preprocess_menu_link().
+ */
+function passports_preprocess_menu_link(&$variables, $hook) {
+  $element = &$variables['element'];
+  if ($element['#original_link']['menu_name'] == 'menu-footer-info') {
+    // Setting language attribute based on the description field,
+    // for accessibility purposes.
+    if (isset($element['#localized_options']['attributes']['title'])) {
+      $element['#localized_options']['attributes']['lang'] = $element['#localized_options']['attributes']['title'];
+    }
+  }
+}
+
+/**
  * Override or insert variables into the field templates.
  *
  * @param $variables
@@ -40,7 +75,6 @@ function passports_preprocess_field(&$variables, $hook) {
     $variables['items'][0]['#markup'] = l(t('Read more') . '<span class="element-invisible"> about ' . check_plain($variables['element']['#object']->title) . '</span>', 'node/' . $variables['element']['#object']->nid, array('html' => TRUE));
   }
 }
-
 
 /**
  * Override or insert variables into the block templates.
@@ -182,6 +216,28 @@ function passports_preprocess_breadcrumb(&$variables, $hook) {
 }
 
 /**
+ * Theme a menu item link.
+ *
+ * @param $variables
+ *   An array of variables containing:
+ *    - menu_item: The menu item array.
+ *    - link_options: An array of link options.
+ *
+ * @ingroup themeable
+ */
+function passports_superfish_menu_item_link($variables) {
+  $menu_item = $variables['menu_item'];
+  $link_options = $variables['link_options'];
+
+  // Identify the active menu item to screen readers.
+  if ($menu_item['link']['link_path'] == $_GET['q'] || ($menu_item['link']['link_path'] == '<front>' && drupal_is_front_page())) {
+    $link_options['attributes']['aria-current'][] = 'page';
+  }
+
+  return l($menu_item['link']['title'], $menu_item['link']['href'], $link_options);
+}
+
+/**
  * Implements theme_form_required_marker().
  */
 function passports_form_required_marker($variables) {
@@ -195,12 +251,180 @@ function passports_form_required_marker($variables) {
 }
 
 /**
+ * Returns HTML for a textfield form element.
+ *
+ * @param $variables
+ *   An associative array containing:
+ *   - element: An associative array containing the properties of the element.
+ *     Properties used: #title, #value, #description, #size, #maxlength,
+ *     #required, #attributes, #autocomplete_path.
+ *
+ * @ingroup themeable
+ */
+function passports_textfield($variables) {
+  $element = $variables['element'];
+  if (empty($element['#attributes']['type'])) {
+    $element['#attributes']['type'] = 'text';
+  }
+  element_set_attributes($element, array('id', 'name', 'value', 'size', 'maxlength'));
+  _form_set_class($element, array('form-text'));
+
+  $extra = '';
+  if ($element['#autocomplete_path'] && !empty($element['#autocomplete_input'])) {
+    drupal_add_library('system', 'drupal.autocomplete');
+    $element['#attributes']['class'][] = 'form-autocomplete';
+
+    $attributes = array();
+    $attributes['type'] = 'hidden';
+    $attributes['id'] = $element['#autocomplete_input']['#id'];
+    $attributes['value'] = $element['#autocomplete_input']['#url_value'];
+    $attributes['disabled'] = 'disabled';
+    $attributes['class'][] = 'autocomplete';
+    $extra = '<input' . drupal_attributes($attributes) . ' />';
+  }
+
+  $output = '<input' . drupal_attributes($element['#attributes']) . ' />';
+
+  return $output . $extra;
+}
+
+/**
+ * Returns HTML for a query pager.
+ *
+ * Menu callbacks that display paged query results should call theme('pager') to
+ * retrieve a pager control so that users can view other results. Format a list
+ * of nearby pages with additional query results.
+ *
+ * @param $variables
+ *   An associative array containing:
+ *   - tags: An array of labels for the controls in the pager.
+ *   - element: An optional integer to distinguish between multiple pagers on
+ *     one page.
+ *   - parameters: An associative array of query string parameters to append to
+ *     the pager links.
+ *   - quantity: The number of pages in the list.
+ *
+ * @ingroup themeable
+ */
+function passports_pager($variables) {
+  $tags = $variables['tags'];
+  $element = $variables['element'];
+  $parameters = $variables['parameters'];
+  $quantity = $variables['quantity'];
+  global $pager_page_array, $pager_total;
+
+  // Calculate various markers within this pager piece:
+  // Middle is used to "center" pages around the current page.
+  $pager_middle = ceil($quantity / 2);
+  // current is the page we are currently paged to
+  $pager_current = $pager_page_array[$element] + 1;
+  // first is the first page listed by this pager piece (re quantity)
+  $pager_first = $pager_current - $pager_middle + 1;
+  // last is the last page listed by this pager piece (re quantity)
+  $pager_last = $pager_current + $quantity - $pager_middle;
+  // max is the maximum page number
+  $pager_max = $pager_total[$element];
+  // End of marker calculations.
+
+  // Prepare for generation loop.
+  $i = $pager_first;
+  if ($pager_last > $pager_max) {
+    // Adjust "center" if at end of query.
+    $i = $i + ($pager_max - $pager_last);
+    $pager_last = $pager_max;
+  }
+  if ($i <= 0) {
+    // Adjust "center" if at start of query.
+    $pager_last = $pager_last + (1 - $i);
+    $i = 1;
+  }
+  // End of generation loop preparation.
+
+  $li_first = theme('pager_first', array('text' => (isset($tags[0]) ? $tags[0] : t('« first')), 'element' => $element, 'parameters' => $parameters));
+  $li_previous = theme('pager_previous', array('text' => (isset($tags[1]) ? $tags[1] : t('‹ previous')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
+  $li_next = theme('pager_next', array('text' => (isset($tags[3]) ? $tags[3] : t('next ›')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
+  $li_last = theme('pager_last', array('text' => (isset($tags[4]) ? $tags[4] : t('last »')), 'element' => $element, 'parameters' => $parameters));
+
+  if ($pager_total[$element] > 1) {
+    if ($li_first) {
+      $items[] = array(
+        'class' => array('pager-first'),
+        'data' => $li_first,
+      );
+    }
+    if ($li_previous) {
+      $items[] = array(
+        'class' => array('pager-previous'),
+        'data' => $li_previous,
+      );
+    }
+
+    // When there is more than one page, create the pager list.
+    if ($i != $pager_max) {
+      if ($i > 1) {
+        $items[] = array(
+          'class' => array('pager-ellipsis'),
+          'data' => '…',
+        );
+      }
+      // Now generate the actual pager piece.
+      for (; $i <= $pager_last && $i <= $pager_max; $i++) {
+        if ($i < $pager_current) {
+          $items[] = array(
+            'class' => array('pager-item'),
+            'data' => theme('pager_previous', array('text' => $i, 'element' => $element, 'interval' => ($pager_current - $i), 'parameters' => $parameters)),
+          );
+        }
+        if ($i == $pager_current) {
+          $items[] = array(
+            'class' => array('pager-current'),
+            'aria-current' => 'page',
+            'data' => $i,
+          );
+        }
+        if ($i > $pager_current) {
+          $items[] = array(
+            'class' => array('pager-item'),
+            'data' => theme('pager_next', array('text' => $i, 'element' => $element, 'interval' => ($i - $pager_current), 'parameters' => $parameters)),
+          );
+        }
+      }
+      if ($i < $pager_max) {
+        $items[] = array(
+          'class' => array('pager-ellipsis'),
+          'data' => '…',
+        );
+      }
+    }
+    // End generation.
+    if ($li_next) {
+      $items[] = array(
+        'class' => array('pager-next'),
+        'data' => $li_next,
+      );
+    }
+    if ($li_last) {
+      $items[] = array(
+        'class' => array('pager-last'),
+        'data' => $li_last,
+      );
+    }
+    return '<nav class="pager-nav"><h2 class="element-invisible">' . t('Pages') . '</h2>' . theme('item_list', array(
+      'items' => $items,
+      'attributes' => array('class' => array('pager')),
+    )) . '</nav>';
+  }
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  *
  * Alter the search API site search block form.
  */
 function passports_form_search_api_page_search_form_site_search_alter(&$form, &$form_state, $form_id) {
   $form['keys_4']['#attributes']['placeholder'] = t('Search');
+  $form['keys_4']['#attributes']['role'] = 'search';
+  $form['keys_4']['#attributes']['type'] = 'search';
 }
 
 /**
@@ -210,6 +434,8 @@ function passports_form_search_api_page_search_form_site_search_alter(&$form, &$
  */
 function passports_form_search_api_page_search_form_alter(&$form, &$form_state, $form_id) {
   $form['form']['keys_4']['#attributes']['placeholder'] = t('Search');
+  $form['form']['keys_4']['#attributes']['role'] = 'search';
+  $form['form']['keys_4']['#attributes']['type'] = 'search';
 }
 
 /**
@@ -285,7 +511,7 @@ function passports_preprocess_readspeaker_button(&$variables) {
 }
 
 /**
- * Determine whether or not th ecurrent page is readable using readspeaker.
+ * Determine whether or not the current page is readable using readspeaker.
  */
 function passports_is_readable_page() {
   // Currently just for node pages.
@@ -321,6 +547,64 @@ function passports_page_alter(&$page) {
         'absolute' => TRUE,
       )),
     );
+
+    // Replicate the external link module's functionality.
+    // See https://www.drupal.org/project/extlink
+    $page['page_bottom']['#attached']['js'][] = array(
+      'type' => 'file',
+      'scope' => 'footer',
+      'group' => JS_THEME,
+      'data' => $path . '/js/extlink.js',
+    );
+
+    // Settings used. Since the module isn't installed and we don't have its
+    // variables, just hard code the options.
+    $page['page_bottom']['#attached']['js'][] = array(
+      'type' => 'setting',
+      'scope' => 'footer',
+      'group' => JS_THEME,
+      'data' => array(
+        'extlink' => array(
+          // Open external links in a new window.
+          'extTarget'     => 0,
+          // The class to add to external links. Using 'ext' will place an icon
+          // next to external links. Set to FALSE to not add a class.
+          'extClass'      => 'ext',
+          // Invisible text to display after the link text of external links.
+          // This is visible to screen readers, for accessibility purposses.
+          'extLabel'      => t('(link is external)'),
+          // If TRUE, images wrapped in an anchor tag will be treated as
+          // external links.
+          'extImgClass'   => FALSE,
+          // Add the icon before or after links. Options: append|prepend.
+          'extIconPlacement' => 'append',
+          // Exclude all subdomains. Otherwise, just www or no subdomain.
+          'extSubdomains' => TRUE,
+          // A regular expression for links that you wish to exclude from being
+          // considered external. To match the "href" property of links.
+          'extExclude'    => '',
+          // A regular expression for internal links that you wish to be
+          // considered external. To match the "href" property of links.
+          'extInclude'    => '',
+          // Exclude links inside elements matching this comma-separated list
+          // of CSS selectors. E.g. #block-block-2 .content, ul.menu.
+          'extCssExclude' => '#header, .breadcrumbs-wrapper',
+          // Only include links inside elements matching this comma-separated
+          // list of CSS selectors. E.g. #block-block-2 .content, ul.menu.
+          'extCssExplicit' =>'',
+          // Display a pop-up warning when any external link is clicked.
+          'extAlert'      => '',
+          // The text in the pop-up, if it is enabled.
+          'extAlertText'  => t('This link will take you to an external web site. We are not responsible for their content.'),
+          // The class to add to mailto links. Using 'mailto' will place an icon
+          // next to mailto links. Set to FALSE to not add a class.
+          'mailtoClass'   => 'mailto',
+          // Invisible text to display after the link text of mailto links.
+          // This is visible to screen readers, for accessibility purposses.
+          'mailtoLabel'   => t('(link sends e-mail)'),
+        ),
+      ),
+    );
   }
 }
 
@@ -338,6 +622,9 @@ function passports_js_alter(&$javascript) {
   }
 }
 
+/**
+ * Implements hook_file_view_alter().
+ */
 function passports_file_view_alter($build, $type) {
   // When viewing a file page.
   if (arg(0) == 'file' && is_numeric(arg(1)) && !arg(2)) {

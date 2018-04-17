@@ -1,9 +1,11 @@
+/**
+ * Main site stylesheet.
+ */
+
 @charset 'UTF-8';
 // Add any styles you wish to use here.
 // This file should be processed using SASS, and will generate
 // CSS files in the CSS folder.
-
-// variables
 
 // Abstracts.
 @import
@@ -45,8 +47,10 @@
   'components/mobile-menu',
   'components/buttons',
   'components/bean',
+  'components/external-links',
   'components/application-process',
   'components/messages',
+  'components/skip-link',
   'components/tabs',
   'components/forms',
   'components/legacy';

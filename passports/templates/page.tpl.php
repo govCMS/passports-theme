@@ -14,23 +14,25 @@
   </div>
 
   <div class="header__inner clearfix">
-
     <?php if ($logo): ?>
-        <a href="https://dfat.gov.au" class="header__logo" id="dfat-logo"><img src="<?php print base_path() . drupal_get_path('theme', 'passports');?>/images/dfat-logo.png" alt="Department of Foreign Affairs and Trade" class="header__logo-image" /></a>
-        <img src="<?php print base_path() . drupal_get_path('theme', 'passports');?>/images/dfat-print-logo.png" alt="Department of Foreign Affairs and Trade" class="header__logo-image" id="dfat-logo-print" />
-        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="apo-logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
-  <?php endif; ?>
+      <a href="https://dfat.gov.au" class="header__logo" id="dfat-logo" title="Go to Department of Foreign Affairs and Trade website">
+        <span class="element-invisible">Go to Department of Foreign Affairs and Trade Website</span>
+        <img src="<?php print base_path() . drupal_get_path('theme', 'passports'); ?>/images/dfat-logo.png" alt="Department of Foreign Affairs and Trade logo" class="header__logo-image" />
+      </a>
+      <img src="<?php print base_path() . drupal_get_path('theme', 'passports'); ?>/images/dfat-print-logo.png" alt="Department of Foreign Affairs and Trade" class="header__logo-image" id="dfat-logo-print" />
+      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="apo-logo"><img src="<?php print $logo; ?>" alt="<?php print t('Australian Passports Office logo'); ?>" class="header__logo-image" /></a>
+    <?php endif; ?>
 
-  <?php print render($page['header']); ?>
+    <?php print render($page['header']); ?>
+  </div>
+
+  <div class="region-nav-container">
+    <?php print render($page['navigation']); ?>
   </div>
 </header>
 
-<div class="region-nav-container">
-  <?php print render($page['navigation']); ?>
-</div>
 
 <div id="page">
-
   <?php print render($page['highlighted']); ?>
 
   <?php if ($breadcrumb || $readspeaker_button): ?>
@@ -41,9 +43,7 @@
   <?php endif; ?>
 
   <div id="main">
-
     <div id="content" class="column" role="main">
-
       <a href="#skip-link" id="skip-content" class="element-invisible">Go to top of page</a>
 
       <a id="main-content"></a>
@@ -79,13 +79,11 @@
         <?php print $sidebar_second; ?>
       </aside>
     <?php endif; ?>
-
   </div>
 
   <div class="footer-container">
     <?php print render($page['footer']); ?>
   </div>
-
 </div>
 
 <?php print render($page['bottom']); ?>

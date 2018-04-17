@@ -1,15 +1,16 @@
-// styles for the header section
+/**
+ * Styles for the header section.
+ */
 
 #header {
   background-color: $primary-purple;
-  min-height: 151px;
   padding: 0;
   .header__inner {
     max-width: 1020px;
     @include breakpoint(large) {
       max-width: 1020px;
       width: 1020px;
-    } 
+    }
     #dfat-logo-print {
       display: none;
     }
@@ -38,17 +39,16 @@
     }
     @include breakpoint(smedium) {
       padding: 20px 0;
-      height: 100%;
       margin: 0 auto;
       a.header__logo {
         &#dfat-logo {
           float: left;
-          margin: 23px 0;
+          margin: 0;
           padding: 20px;
         }
         &#apo-logo {
           float: right;
-          margin: 23px 0;
+          margin: 0;
           padding: 20px;
         }
       }
@@ -68,7 +68,7 @@
     .region-navigation {
       padding: 0px 20px;
       height: 100%;
-      font-size: 0.8rem;
+      font-size: .8rem;
       display: flex;
       background-color: $primary-dark-blue;
       max-width: 1020px;
@@ -135,7 +135,7 @@
                       font-family: $font-stack-sans;
                       font-weight: 600;
                       text-align: left;
-                      transition: all 0.2s ease-in-out;
+                      transition: all .2s ease-in-out;
                       &:hover,
                       &:focus {
                         color: $primary-white;
@@ -164,7 +164,7 @@
                 flex-direction: column;
                 text-align: center;
                 display: flex;
-                transition: all 0.2s ease-in-out;
+                transition: all .2s ease-in-out;
                 &::before {
                   content: none;
                 }
@@ -195,6 +195,7 @@
                 height: 27px;
                 border: none;
                 padding: 1px 25px 1px 5px;
+                box-sizing: border-box;
               }
             }
             .form-submit {
@@ -208,7 +209,7 @@
               background-image: url(../images/icon-search-2x.png);
               background-size: 18px 18px;
               box-shadow: none;
-              transition: all 0.2s ease-in-out;
+              transition: all .2s ease-in-out;
               &:hover,
               &:focus {
                 background-color: $secondary-aqua;

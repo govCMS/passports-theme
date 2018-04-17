@@ -1,4 +1,6 @@
-// Styling for media on the site (images).
+/**
+ * Styling for media on the site (images).
+ */
 
 .media-full_width_scaled {
   width: 100%;
@@ -7,13 +9,28 @@
   width: 100%;
 }
 .media-half_width_scaled {
-  width: 50%;
+  width: 100%;
+  @include breakpoint(xsmall) {
+    width: 50%;
+  }
 }
 .media-third_width_scaled {
-  width: 33%;
+  width: 100%;
+  @include breakpoint(xsmall) {
+    width: 50%;
+  }
+  @include breakpoint(small) {
+    width: 33%;
+  }
 }
 .media-quarter_width_scaled {
-  width: 25%;
+  width: 100%;
+  @include breakpoint(xsmall) {
+    width: 50%;
+  }
+  @include breakpoint(small) {
+    width: 25%;
+  }
 }
 .media {
   &.media-element-container {
@@ -23,18 +40,18 @@
     a {
       .field-name-field-image-caption {
         color: $secondary-pale-green;
-        transition: all 0.2s ease-in-out;
+        transition: all .2s ease-in-out;
         text-decoration: underline;
       }
       &:hover,
       &:focus {
         .field-name-field-image-caption {
           text-decoration: none;
-          transition: all 0.2s ease-in-out;
+          transition: all .2s ease-in-out;
         }
-        transition: all 0.2s ease-in-out;
+        transition: all .2s ease-in-out;
         img {
-          transition: all 0.2s ease-in-out;
+          transition: all .2s ease-in-out;
           filter: contrast(1.1);
         }
       }
@@ -45,7 +62,7 @@
       background-color: $primary-dark-grey;
       color: $primary-white;
       font-weight: 300;
-      font-size: 0.9rem;
+      font-size: .9rem;
     }
   }
 }

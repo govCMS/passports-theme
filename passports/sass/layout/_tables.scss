@@ -1,4 +1,6 @@
-// Styling of the tables on the site.
+/**
+ * Styling of the tables on the site.
+ */
 
 table {
   margin: 20px 0;
@@ -13,6 +15,7 @@ table {
   }
   tr {
     border-bottom: 1px solid $secondary-grey;
+    background-color: $primary-white;
     &:last-child {
       border-bottom: 0;
     }
@@ -24,10 +27,12 @@ table {
       border-bottom: none;
       vertical-align: middle;
       text-align: left;
+      text-transform: uppercase;
       &:last-child {
         border-right: none;
       }
       p {
+        color: $primary-white;
         margin: 0;
       }
     }
@@ -43,11 +48,31 @@ table {
         margin: 0;
       }
     }
-    &:nth-child(odd) {
-      background-color: #eee;
+  }
+  &.striped {
+    tr {
+      &:nth-child(odd) {
+        background-color: #eee;
+      }
     }
-    &:nth-child(even) {
-      background-color: $primary-white;
+  }
+  &.borderless {
+    border: none;
+    tr {
+      border-bottom: none;
+      background-color: none;
+      th {
+        background-color: $primary-white;
+        color: black;
+        border-right: none;
+        border-bottom: none;
+        p {
+          color: black;
+        }
+      }
+      td {
+        border-right: none;
+      }
     }
   }
 }

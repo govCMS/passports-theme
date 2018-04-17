@@ -1,10 +1,14 @@
-// styling for the news preview cards
+/**
+ * Styling for the news preview cards.
+ */
+
 html {
   #page {
     .view-news {
       .view-content {
         .item-list {
-          > ul {
+          > ul,
+          > ol {
             list-style-type: none;
             margin: 0;
             li.views-row {
@@ -12,6 +16,9 @@ html {
               padding: 0;
               border-top: none;
               border-bottom: 1px dotted black;
+              p {
+                margin: 10px 0;
+              }
             }
           }
         }
@@ -30,16 +37,25 @@ html {
           margin: 0 0 20px;
         }
         .field-name-title {
-          margin: 10px 0;
-          a {
-            color: $primary-aqua;
-            text-decoration: none;
-            transition: all 0.2s ease-in-out;
-            &:hover,
-            &:focus {
-              font-weight: 500;
-              text-decoration: underline;
-              color: $tertiary-aqua;
+          h3 {
+            line-height: 1.6rem;
+            font-size: 1.6rem;
+            font-family: $font-stack-sans;
+            letter-spacing: .1px;
+            font-weight: 400;
+            margin: 10px 0;
+            padding: 10px 0;
+            a {
+              font-weight: 400;
+              color: $primary-aqua;
+              text-decoration: none;
+              transition: all .2s ease-in-out;
+              &:hover,
+              &:focus {
+                font-weight: 450;
+                text-decoration: underline;
+                color: $tertiary-aqua;
+              }
             }
           }
         }
@@ -78,7 +94,7 @@ html {
             background-color: $primary-aqua;
             color: $primary-white;
             text-decoration: none;
-            transition: all 0.2s ease-in-out;
+            transition: all .2s ease-in-out;
             &:hover,
             &:focus {
               color: $primary-white;
@@ -94,5 +110,5 @@ html {
         }
       }
     }
-  }  
+  }
 }

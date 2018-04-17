@@ -25,26 +25,29 @@
 <div class="gov-front-layout clearfix" <?php if (!empty($css_id)) : print "id=\"$css_id\""; endif; ?>>
   
   <?php if (!empty($content['main'])) : ?>
-    <div class="grid-8 gov-front-main">
+    <section class="grid-8 gov-front-main">
+      <h2 class="element-invisible">Highlights</h2>
       <div class="gov-front-main-inner">
         <?php print $content['main'];?>
       </div>
-    </div>
+    </section>
   <?php endif; ?>
 
   <?php if (!empty($content['left']) || !empty($content['right'])): ?>
     <div class="gov-front-lower">
       <div class="gov-front-lower-inner">
         <?php if (!empty($content['left'])) : ?>
-          <div class="alpha grid-4 gov-front-left gov-front-col">
+          <section class="alpha grid-4 gov-front-left gov-front-col">
+            <h2 class="element-invisible">Content left</h2>
             <?php print $content['left'];?>
-          </div>
+          </section>
         <?php endif; ?>
 
         <?php if (!empty($content['right'])) : ?>
-          <div class="omega grid-4 gov-front-right gov-front-col">
+          <section class="omega grid-4 gov-front-right gov-front-col">
+            <h2 class="element-invisible">Content right</h2>
             <?php print $content['right'];?>
-          </div>
+          </section>
         <?php endif; ?>
       </div>
     </div>

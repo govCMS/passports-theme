@@ -1,13 +1,15 @@
-// Styling for the website that fixes the breaks in legacy browsers.
+/**
+ * Styling for the website that fixes the breaks in legacy browsers.
+ */
 
 html.lte-ie9 {
   .region-nav-container {
     .region-navigation {
       display: block;
-      .contextual-links-region {
+      .block-superfish {
         display: inline-block;
         &.first {
-          width: 85%;
+          width: 83%;
         }
         .block__content {
           display: inline-block;
@@ -19,7 +21,8 @@ html.lte-ie9 {
         li {
           height: 100%;
           display: table-cell;
-          width: 12.5%;
+          width: 14.28%;
+          table-layout: fixed;
           > ul {
             display: block;
             li {
@@ -30,7 +33,7 @@ html.lte-ie9 {
         }
       }
       .block-search-api-page {
-        width: 14.5%;
+        width: 16.5%;
         height: 100%;
         vertical-align: top;
         .block__content {

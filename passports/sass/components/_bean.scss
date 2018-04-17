@@ -1,8 +1,18 @@
-// Styling for bean entities.
+/**
+ * Styling for bean entities.
+ */
+
 .not-front {
   #main {
     .entity-bean {
       border: 1px solid black;
+      a {
+        font-weight: 400;
+        &:hover,
+        &:focus {
+          font-weight: 450;
+        }
+      }
       &.bean-icon {
         a {
           border-bottom: none;
@@ -27,6 +37,13 @@
   }
   .entity-bean {
     width: 100%;
+    a {
+      font-weight: 400;
+      &:hover,
+      &:focus {
+        font-weight: 450;
+      }
+    }
     &.bean-icon {
       a.wrapper-link {
         color: black;
@@ -35,7 +52,7 @@
         display: block;
         border-bottom: 1px dotted black;
         position: relative;
-        transition: all 0.2s ease-in-out;
+        transition: all .2s ease-in-out;
         @include breakpoint(large) {
           padding: 10px;
         }
@@ -127,7 +144,8 @@
       h3.bean-title {
         color: $primary-white;
       }
-      a.wrapper-link  {
+      a.wrapper-link {
+        position: relative;
         display: block;
         height: 100%;
         width: 100%;
@@ -140,6 +158,18 @@
         &:hover,
         &:focus {
           background: radial-gradient($quarternary-aqua, $secondary-dark-blue);
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          display: block;
+          bottom: 20px;
+          right: 20px;
+          width: 6px;
+          height: 10px;
+          background-image: url(../images/arrow-right-icon-light.png);
+          background-position: 0 0;
+          background-repeat: no-repeat;
         }
       }
       .field-name-field-block-category {
@@ -176,9 +206,9 @@
         &:hover,
         &:focus {
           text-decoration: underline;
-          transition: all 0.2s ease-in-out;
+          transition: all .2s ease-in-out;
           img {
-            transition: all 0.2s ease-in-out;
+            transition: all .2s ease-in-out;
             filter: contrast(1.1);
           }
         }

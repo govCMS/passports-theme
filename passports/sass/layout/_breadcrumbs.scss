@@ -1,4 +1,6 @@
-// Styling for the breadcrumbs.
+/**
+ * Styling for the breadcrumbs.
+ */
 
 .breadcrumbs-wrapper {
   max-width: 1020px;
@@ -14,9 +16,9 @@
         margin-right: 150px;
       }
       li {
-        margin-right: 10px;
+        margin-right: 7px;
         a {
-          padding-right: 10px;
+          padding-right: 7px;
           font-weight: 400;
           color: $primary-aqua;
           &:hover,

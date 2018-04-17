@@ -1,4 +1,6 @@
-// Sass file for the width of the pages main divs.
+/**
+ * Styles for the width of the pages main divs.
+ */
 
 body {
   background-color: $primary-white;
@@ -36,9 +38,6 @@ body {
     max-width: 1020px;
     width: 100%;
     margin: 0 auto;
-  }
-  p {
-    margin: 10px 0;
   }
 }
 

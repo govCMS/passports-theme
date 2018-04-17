@@ -3,10 +3,10 @@
  */
 
  .region-mobile-nav-container {
-  padding: 20px 0 0;
+  padding: 15px 0 0;
   display: block;
   background-color: $primary-dark-blue;
-  min-height: 70px;
+  min-height: 60px;
   @include breakpoint(large) {
     display: none;
   }
@@ -16,8 +16,11 @@
     background-color: $primary-dark-blue;
     color: $primary-white;
     .menu-block-wrapper {
-      a {
+      button {
         color: $primary-white;
+        a {
+          color: $primary-white;
+        }
         // Menu open/close.
         &.menu-opener {
           display: block;
@@ -25,7 +28,7 @@
           width: 30px;
           height: 30px;
           background-color: $primary-aqua;
-          margin: 0 0 20px 20px;
+          margin: 0 0 0 15px;
           &:hover,
           &:focus {
             background-color: $secondary-aqua;
@@ -42,7 +45,7 @@
               height: 4px;
               position: absolute;
               left: 0;
-              transition: all 0.4s; 
+              transition: all .4s; 
               &.line-1 {
                 top: 0;
               }
@@ -66,7 +69,7 @@
             }
           }
         }
-  
+
         // Child menu expand/collapse.
         &.menu-expander {
           position: absolute;
@@ -75,9 +78,10 @@
           display: inline-block;
           width: 57px;
           height: 57px;
-          margin-left: 10px;
+          margin: 0;
           padding: 20px;
-          border-left: 1px solid $primary-aqua;
+          border-left: 1px solid $secondary-aqua;
+          background-color: $primary-dark-blue;
           &:hover,
           &:focus {
             background-color: $primary-aqua;
@@ -87,9 +91,9 @@
             content: '';
             position: absolute;
             background-color: $primary-white;
-            transition: transform 0.25s ease-out;
+            transition: transform .25s ease-out;
           }
-      
+
           // Vertical line.
           &:before {
             top: 33%;
@@ -98,7 +102,7 @@
             height: 20px;
             margin-left: -1px;
           }
-      
+
           // Horizontal line.
           &:after {
             top: 49%;
@@ -107,7 +111,7 @@
             height: 4px;
             margin-top: -1px;
           }
-          
+
           &.collapse {
             cursor: pointer;
             &:before {
@@ -125,21 +129,35 @@
         }
       }
 
-      // Dropdown Nav
+      // Dropdown navigation.
+      > ul {
+        > li.menu__item {
+          &:first-child {
+            margin-top: 15px;
+          }  
+        }
+      }
       ul {
         display: none;
         margin: 0;
         width: 100%;
+        a {
+          color: $primary-white;
+        }
         li.menu__item {
           position: relative;
           margin: 0;
           padding: 0;
-          border-bottom: 1px solid $primary-aqua;
+          border-bottom: 1px solid $secondary-aqua;
+          &.active {
+            background-color: $primary-aqua;
+          }
           &.active-trail > a.menu__link {
             background-color: $primary-aqua;
           }
+
           &:first-child {
-            border-top: 1px solid $primary-aqua;          
+            border-top: 1px solid $secondary-aqua;
           }
           &:last-child {
             border-bottom: none;
@@ -182,30 +200,32 @@
         }
       }
     }
-  
-    // Search Bar Styling
+
+    // Header search bar styling.
     .block-search-api-page {
       position: absolute;
       height: 30px;
-      top: 20px;
-      right: 20px;
-      width: calc(100% - 90px);
+      top: 15px;
+      right: 15px;
+      width: calc(100% - 75px);
       max-width: 100%;
       .form-type-textfield {
         .form-text {
           height: 30px;
           padding: 1px 5px;
+          box-sizing: border-box;
         }
       }
       .form-submit {
         height: 30px;
-        margin: 0;
+        color: transparent;
+        margin: 0 0 15px;
         box-shadow: none;
         background-color: $primary-aqua;
         background-image: url(../images/icon-search-2x.png);
         background-size: 18px 18px;
         box-shadow: none;
-        transition: all 0.2s ease-in-out;
+        transition: all .2s ease-in-out;
         &:hover,
         &:focus {
           background-color: $secondary-aqua;

@@ -1,4 +1,6 @@
-// Styling for the read speaker.
+/**
+ * Styling for the read speaker plugin.
+ */
 
 .breadcrumbs-wrapper {
   position: relative;
@@ -16,6 +18,24 @@
         padding: 20px 0 0;
         @include breakpoint(small) {
           padding: 0;
+        }
+      }
+      .rsbtn_exp {
+        padding: 20px 0 0;
+        @include breakpoint(small) {
+          padding: 0;
+        }
+        .rsbtn_powered {
+          top: 48px;
+          @include breakpoint(small) {
+            top: 28px;
+          }
+        }
+        .rsbtn_status_overlay {
+          top: 21px;
+          @include breakpoint(small) {
+            top: 1px;
+          }
         }
       }
     }

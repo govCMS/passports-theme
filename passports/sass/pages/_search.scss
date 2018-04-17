@@ -1,4 +1,6 @@
-// styling for the search results page
+/**
+ * Styling for the search results page.
+ */
 
 #main {
   #search-api-page-search-form {
@@ -10,6 +12,7 @@
         height: 27px;
         background-color: $primary-white;
         width: 15rem;
+        box-sizing: border-box;
       }
     }
     .form-submit {
@@ -26,7 +29,7 @@
       background-size: 18px 18px;
       box-shadow: none;
       color: transparent;
-      transition: all 0.2s ease-in-out;
+      transition: all .2s ease-in-out;
       &:hover,
       &:focus {
         background-color: $secondary-aqua;
@@ -47,16 +50,21 @@
         margin: 0;
         position: relative;
         h3.title {
-          padding: 0;
-          margin: 0 0 10px;
-          @extend h3;
+          line-height: 1.6rem;
+          font-size: 1.6rem;
+          font-family: $font-stack-sans;
+          letter-spacing: .1px;
+          font-weight: 400;
+          margin: 10px 0;
+          padding: 10px 0;
           a {
-            @extend h3;
+            font-weight: 400;
             color: $primary-aqua;
             text-decoration: none;
-            transition: all 0.2s ease-in-out;
+            transition: all .2s ease-in-out;
             &:hover,
             &:focus {
+              font-weight: 450;
               text-decoration: underline;
               color: $tertiary-aqua;
             }
@@ -100,7 +108,7 @@
               background-color: $primary-aqua;
               color: $primary-white;
               text-decoration: none;
-              transition: all 0.2s ease-in-out;
+              transition: all .2s ease-in-out;
               &:hover,
               &:focus {
                 color: $primary-white;

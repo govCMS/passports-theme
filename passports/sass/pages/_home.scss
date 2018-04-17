@@ -1,4 +1,6 @@
-// Styling for the home page.
+/**
+ * Styling for the home page.
+ */
 
 .front {
   #main {
@@ -93,7 +95,7 @@
                       }
                     }
                   }
-                }          
+                }
               }
             }
             .panel-pane.pane-news {
@@ -109,8 +111,8 @@
                   padding-right: 10px;
                 }
               }
-              ul:last-child {
-                border-bottom: 1px dotted black;
+              h3 {
+                margin: 10px 0;
               }
               .more-link {
                 margin: 25px 0 5px;
@@ -123,7 +125,7 @@
                   padding: 5px 10px;
                   color: white;
                   text-decoration: none;
-                  transition: all 0.2s ease-in-out;
+                  transition: all .2s ease-in-out;
                   &:hover,
                   &:focus {
                     color: $primary-white;

@@ -1,31 +1,39 @@
-/// Breakpoints
-/// @example
-/// .element {
-///   @include breakpoint(medium);
-/// }
-/// breakpoint mixin used in conjuction with the breakpoint variables
-/// @group Breakpoints
-
+/**
+ * Breakpoints mixin.
+ *
+ * @example
+ * .element {
+ *   @include breakpoint(medium);
+ * }
+ * Breakpoint mixin used in conjuction with the breakpoint variables.
+ *
+ * @group Breakpoints
+ */
 @mixin breakpoint($name) {
   @if map-has-key($breakpoints, $name) {
-      @media #{inspect(map-get($breakpoints, $name))} {
-    @content;
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  }
+  @else {
+    @warn "Couldn't find a your breakpoint named `#{$name}`.";
   }
 }
-@else {
-  @warn "Couldn't find a your breakpoint named `#{$name}`.";
-}
-}
 
-/// To be used with the @see breakpoint mixin
-/// @group Breakpoints
+/**
+ * Breakpoints.
+ *
+ * To be used with the @see breakpoint mixin.
+ *
+ * @group Breakpoints
+ */
 $breakpoints: (
-'tiny':      ( max-width:  479px ),
-'xsmall':    ( min-width:  480px ),
-'small':     ( min-width:  760px ),
-'smedium':   ( min-width: 840px ),
-'small-max': ( max-width:  979px ),
-'medium':    ( min-width:  980px ),
-'large':     ( min-width: 1025px ),
-'custom':    ( min-height:  40em )
+  'tiny':      (max-width:   479px),
+  'xsmall':    (min-width:   480px),
+  'small':     (min-width:   760px),
+  'smedium':   (min-width:   840px),
+  'small-max': (max-width:   979px),
+  'medium':    (min-width:   980px),
+  'large':     (min-width:  1025px),
+  'custom':    (min-height:   40em)
 );

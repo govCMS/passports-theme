@@ -1,6 +1,9 @@
-// Styling for the buttons (and anchor tags with button class).
+/**
+ * Styling for the buttons (and anchor tags with button class).
+ */
 
 button {
+  text-transform: uppercase;
   margin: 20px 0;
   padding: 7px 10px;
   display: inline-block;
@@ -9,7 +12,7 @@ button {
   color: $primary-white;
   background-color: $primary-aqua;
   box-shadow: none;
-  transition: all 0.2s ease-in-out;
+  transition: all .2s ease-in-out;
   font-size: 1.4rem;
   line-height: 1.4rem;
   @include breakpoint(small) {
@@ -23,6 +26,7 @@ button {
   &:focus {
     color: $primary-white;
     background-color: $secondary-aqua;
+    outline: none;
   }
   &:active {
     box-shadow: black;
