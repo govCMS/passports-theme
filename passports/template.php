@@ -422,6 +422,7 @@ function passports_form_search_api_page_search_form_site_search_alter(&$form, &$
   $form['keys_4']['#attributes']['placeholder'] = t('Search');
   $form['keys_4']['#attributes']['role'] = 'searchbox';
   $form['keys_4']['#attributes']['type'] = 'search';
+  $form['#attributes']['role'] = 'search';
 }
 
 /**
@@ -433,6 +434,7 @@ function passports_form_search_api_page_search_form_alter(&$form, &$form_state, 
   $form['form']['keys_4']['#attributes']['placeholder'] = t('Search');
   $form['form']['keys_4']['#attributes']['role'] = 'searchbox';
   $form['form']['keys_4']['#attributes']['type'] = 'search';
+  $form['#attributes']['role'] = 'search';
 }
 
 /**

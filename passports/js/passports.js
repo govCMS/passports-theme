@@ -17,9 +17,9 @@ Drupal.behaviors.oaktonMobileMenu = {
   attach: function(context, settings) {
     $('.region-mobile-nav .menu-block-wrapper', context).once('mobile-menu', function() {
       // Link to toggle child menus expended and collapsed.
-      var $expander = $('<button class="menu-expander expand" aria-label="' + Drupal.t('Expand menu') + '" title="' + Drupal.t('Expand menu') + '"></button>');
+      var $expander = $('<button class="menu-expander expand" aria-expanded="false" aria-label="' + Drupal.t('Expand menu') + '" title="' + Drupal.t('Expand menu') + '"></button>');
       // Link to toggle the menu open and closed.
-      var $opener = $('<button class="menu-opener open" aria-label="' + Drupal.t('Open main menu') + '" title="' + Drupal.t('Open main menu') + '">' +
+      var $opener = $('<button class="menu-opener open" aria-expanded="false" aria-label="' + Drupal.t('Open main menu') + '" title="' + Drupal.t('Open main menu') + '">' +
                         '<span class="lines">' +
                           '<span class="line line-1"></span>' +
                           '<span class="line line-2"></span>' +
@@ -49,10 +49,12 @@ Drupal.behaviors.oaktonMobileMenu = {
         if ($this.hasClass('open')) {
           $this.attr('aria-label', Drupal.t('Open main menu'));
           $this.attr('title', Drupal.t('Open main menu'));
+          $this.attr('aria-expanded', false);
         }
         else {
           $this.attr('aria-label', Drupal.t('Close main menu'));
           $this.attr('title', Drupal.t('Close main menu'));
+          $this.attr('aria-expanded', true);
         }
 
         e.preventDefault();
@@ -72,10 +74,12 @@ Drupal.behaviors.oaktonMobileMenu = {
         if ($this.hasClass('expand')) {
           $this.attr('aria-label', Drupal.t('Expand menu'));
           $this.attr('title', Drupal.t('Expand menu'));
+          $this.attr('aria-expanded', false);
         }
         else {
           $this.attr('aria-label', Drupal.t('Collapse menu'));
           $this.attr('title', Drupal.t('Collapse menu'));
+          $this.attr('aria-expanded', true);
         }
 
         e.preventDefault();

@@ -1,25 +1,32 @@
 /**
  * Styling for the highlights container on pages.
  */
-
-.highlight {
-  background-color: $primary-dark-green;
-  color: $primary-white;
-  p {
+#main {
+  .highlight {
+    background-color: $primary-dark-green;
     color: $primary-white;
-  }
-  padding: 20px;
-  margin: 20px 0;
-  h1, h2, h3, h4, h5, h6 {
-    color: $primary-white;
-    padding: 0 0 20px;
-    margin: 0 0 20px;
-    border-bottom: 1px dotted $primary-white;
-  }
-  a {
-    color: $secondary-pale-green;
-    &:visited {
+    p {
+      color: $primary-white;
+    }
+    ul,
+    ol {
+      color: $primary-white;
+    }
+    padding: 20px;
+    margin: 20px 0;
+    h1, h2, h3, h4, h5, h6 {
+      color: $primary-white;
+      padding: 0 0 20px;
+      margin: 0 0 20px;
+      border-bottom: 1px dotted $primary-white;
+    }
+    a {
       color: $secondary-pale-green;
+      &:hover,
+      &:focus,
+      &:visited {
+        color: $secondary-pale-green;
+      }
     }
   }
 }

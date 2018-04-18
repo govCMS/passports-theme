@@ -50,6 +50,9 @@ body {
             li.menu__item {
               margin-bottom: 10px;
               min-height: inherit;
+              &:last-child {
+                margin-bottom: 0;
+              }
             }
           }
         }

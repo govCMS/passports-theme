@@ -136,6 +136,7 @@ html #main p, html #main .media-p {
 html #main ul {
   margin: 0 20px;
   list-style-type: disc;
+  color: black;
 }
 
 html #main ul li {
@@ -149,6 +150,7 @@ html #main ul li li:first-child {
 html #main ol {
   margin: 0 20px;
   list-style-type: decimal;
+  color: black;
 }
 
 html #main ol li {
@@ -588,29 +590,34 @@ body {
 /**
  * Styling for the highlights container on pages.
  */
-.highlight {
+#main .highlight {
   background-color: #123559;
   color: #fff;
   padding: 20px;
   margin: 20px 0;
 }
 
-.highlight p, .highlight html #main .media-p, html #main .highlight .media-p {
+#main .highlight p, html #main .highlight .media-p {
   color: #fff;
 }
 
-.highlight h1, .highlight h2, .highlight h3, .highlight h4, .highlight h5, .highlight h6 {
+#main .highlight ul,
+#main .highlight ol {
+  color: #fff;
+}
+
+#main .highlight h1, #main .highlight h2, #main .highlight h3, #main .highlight h4, #main .highlight h5, #main .highlight h6 {
   color: #fff;
   padding: 0 0 20px;
   margin: 0 0 20px;
   border-bottom: 1px dotted #fff;
 }
 
-.highlight a {
+#main .highlight a {
   color: #e7f2f3;
 }
 
-.highlight a:visited {
+#main .highlight a:hover, #main .highlight a:focus, #main .highlight a:visited {
   color: #e7f2f3;
 }
 
@@ -679,10 +686,6 @@ blockquote {
 
 .media.media-element-container {
   margin-bottom: 10px;
-}
-
-.media.media-element-container img {
-  margin: 0 auto;
 }
 
 .media .content a .field-name-field-image-caption {
@@ -931,6 +934,10 @@ body #page .footer-container #footer .block-menu-block ul.menu {
 body #page .footer-container #footer .block-menu-block ul.menu li.menu__item {
   margin-bottom: 10px;
   min-height: inherit;
+}
+
+body #page .footer-container #footer .block-menu-block ul.menu li.menu__item:last-child {
+  margin-bottom: 0;
 }
 
 body #page .footer-container #footer #block-bean-follow-us {
