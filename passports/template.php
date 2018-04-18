@@ -41,10 +41,6 @@ function passports_process_node(&$variables, $hook) {
   if ($layout = ds_get_layout('node', $node->type, $variables['view_mode'])) {
     // For a node, use an article wrapper, like the default node template does.
     $variables['layout_wrapper'] = 'article';
-    // For our right column, make it an aside, for related content.
-    if ($layout['layout'] == 'ds_2col_fluid') {
-      $variables['right_wrapper'] = 'aside';
-    }
   }
 }
 
@@ -53,12 +49,26 @@ function passports_process_node(&$variables, $hook) {
  */
 function passports_preprocess_menu_link(&$variables, $hook) {
   $element = &$variables['element'];
-  if ($element['#original_link']['menu_name'] == 'menu-footer-info') {
-    // Setting language attribute based on the description field,
-    // for accessibility purposes.
-    if (isset($element['#localized_options']['attributes']['title'])) {
-      $element['#localized_options']['attributes']['lang'] = $element['#localized_options']['attributes']['title'];
-    }
+
+  // Identify the active menu item to screen readers.
+  if ($element['#original_link']['link_path'] == $_GET['q'] || ($element['#original_link']['link_path'] == '<front>' && drupal_is_front_page())) {
+    $element['#localized_options']['attributes']['aria-current'][] = 'page';
+  }
+}
+
+/**
+ * Override or insert variables into the superfish menu item link temmplates.
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("superfish_menu_item_link" in this
+ *   case.)
+ */
+function passports_preprocess_superfish_menu_item_link(&$variables, $hook) {
+  // Identify the active menu item to screen readers.
+  if ($variables['menu_item']['link']['link_path'] == $_GET['q'] || ($variables['menu_item']['link']['link_path'] == '<front>' && drupal_is_front_page())) {
+    $variables['link_options']['attributes']['aria-current'][] = 'page';
   }
 }
 
@@ -128,6 +138,15 @@ function passports_entity_view_alter(&$build, $type) {
 function passports_preprocess_entity(&$variables) {
   if ($variables['entity_type'] == 'bean') {
     $bean = $variables['bean'];
+    // We want variable wrapper elements for accessibility reasons.
+    // The aside view mode is used for displaying blocks in the aside entity
+    // reference field.
+    if ($variables['view_mode'] == 'aside') {
+      $variables['wrapper_element'] = 'aside';
+    }
+    else {
+      $variables['wrapper_element'] = 'article';
+    }
 
     // Add a title class.
     $variables['title_attributes_array']['class'][] = 'bean-title';
@@ -213,28 +232,6 @@ function passports_preprocess_breadcrumb(&$variables, $hook) {
     $end = count($variables['breadcrumb']) - 1;
     $variables['breadcrumb'][$end] .= ': ' . check_plain(arg(1));
   }
-}
-
-/**
- * Theme a menu item link.
- *
- * @param $variables
- *   An array of variables containing:
- *    - menu_item: The menu item array.
- *    - link_options: An array of link options.
- *
- * @ingroup themeable
- */
-function passports_superfish_menu_item_link($variables) {
-  $menu_item = $variables['menu_item'];
-  $link_options = $variables['link_options'];
-
-  // Identify the active menu item to screen readers.
-  if ($menu_item['link']['link_path'] == $_GET['q'] || ($menu_item['link']['link_path'] == '<front>' && drupal_is_front_page())) {
-    $link_options['attributes']['aria-current'][] = 'page';
-  }
-
-  return l($menu_item['link']['title'], $menu_item['link']['href'], $link_options);
 }
 
 /**
@@ -423,7 +420,7 @@ function passports_pager($variables) {
  */
 function passports_form_search_api_page_search_form_site_search_alter(&$form, &$form_state, $form_id) {
   $form['keys_4']['#attributes']['placeholder'] = t('Search');
-  $form['keys_4']['#attributes']['role'] = 'search';
+  $form['keys_4']['#attributes']['role'] = 'searchbox';
   $form['keys_4']['#attributes']['type'] = 'search';
 }
 
@@ -434,7 +431,7 @@ function passports_form_search_api_page_search_form_site_search_alter(&$form, &$
  */
 function passports_form_search_api_page_search_form_alter(&$form, &$form_state, $form_id) {
   $form['form']['keys_4']['#attributes']['placeholder'] = t('Search');
-  $form['form']['keys_4']['#attributes']['role'] = 'search';
+  $form['form']['keys_4']['#attributes']['role'] = 'searchbox';
   $form['form']['keys_4']['#attributes']['type'] = 'search';
 }
 
@@ -526,9 +523,9 @@ function passports_is_readable_page() {
  * Implements hook_page_alter().
  */
 function passports_page_alter(&$page) {
-  if (passports_is_readable_page()) {
-    $path = drupal_get_path('theme', 'passports');
+  $path = drupal_get_path('theme', 'passports');
 
+  if (passports_is_readable_page()) {
     $page['page_bottom']['#attached']['js'][] = array(
       'type' => 'file',
       'scope' => 'footer',
@@ -555,7 +552,7 @@ function passports_page_alter(&$page) {
     'type' => 'file',
     'scope' => 'footer',
     'group' => JS_THEME,
-    'data' => url($path . '/js/extlink.js', array('absolute' => TRUE)),
+    'data' => $path . '/js/extlink.js',
   );
 
   // Settings used. Since the module isn't installed and we don't have its

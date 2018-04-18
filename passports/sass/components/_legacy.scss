@@ -91,6 +91,27 @@ html.lte-ie9 {
           }
         }
       }
+      ol.application-process,
+      ul.application-process {
+        li {
+          width: 100%;
+          padding: 10px 10px 10px 50px;
+          margin: 0 0 20px;
+          background-position: center left 10px;
+          &::after {
+            border-width: 5px 5px 0;
+            border-color: #666666 transparent transparent transparent;
+            left: 49%;
+            top: 100%;
+            margin-top: 7px;
+          }
+          &:last-child {
+            &::after {
+              content: none;
+            }
+          }
+        }
+      }
     }
     .footer-container {
       .region-footer#footer {

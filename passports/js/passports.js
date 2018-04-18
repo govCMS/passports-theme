@@ -113,6 +113,31 @@ Drupal.behaviors.oaktonAccessibility = {
     $('article.node div.highlight').replaceWith(function() {
       return '<aside class="highlight">' + this.innerHTML + '</span>';
     });
+
+    // Set the title of video filter iframes.
+    // Since we don't really have a way for administrators to set this, try to
+    // find the nearese entity title. This should only be either a video bean
+    // or a node page.
+    $('iframe.video-filter').once('video-filter-iframe-title').each(function() {
+      var $this = $(this);
+      var $container = null;
+      var title = 'YouTube video';
+
+      $container = $this.closest('.bean-video');
+      if ($container.length) {
+        title += ': ' + $('h3.bean-title', $container).text();
+      }
+      else {
+        $container = $this.closest('article.node');
+        if ($container.length) {
+          title += ': ' + $container.closest('#content').find('h1.title').text();
+        }
+      }
+
+      if (title) {
+        $this.attr('title', title);
+      }
+    })
   }
 };
 

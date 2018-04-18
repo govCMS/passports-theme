@@ -27,7 +27,7 @@
  * @see template_process()
  */
 ?>
-<div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<<?php print $wrapper_element; ?> class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print render($contextual_links); ?>
 
   <?php if (!empty($title)): ?>
@@ -48,4 +48,4 @@
     </a>
   <?php endif; ?>
 
-</div>
+</<?php print $wrapper_element; ?>>

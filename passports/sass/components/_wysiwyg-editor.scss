@@ -5,4 +5,16 @@
 body.cke_editable {
   // Don't use flex.
   display: block;
+  padding: 0 10px;
+  a.button {
+    text-decoration: none !important;
+  }
+  table {
+    border-spacing: 0;
+    tbody {
+      th {
+        background-color: none;
+      }
+    }
+  }
 }

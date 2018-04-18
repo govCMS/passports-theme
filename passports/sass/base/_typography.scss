@@ -77,6 +77,12 @@ html {
     p {
       margin: 10px 0;
     }
+    // To allow proper inline styling of media within paragraphs, the media
+    // module converts the p tags that wrap media elements to divs with this
+    // media-p class.
+    .media-p {
+      @extend p;
+    }
     ul {
       margin: 0 20px;
       list-style-type: disc;

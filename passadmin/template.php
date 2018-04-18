@@ -158,3 +158,36 @@ function passadmin_filter_process_format($element) {
 
   return $element;
 }
+
+function passadmin_menu_attribute_info_alter(&$attributes) {
+  // Add a lang attribute.
+  $attributes['lang'] = array(
+    'label' => t('Lang'),
+    'enabled' => 1,
+    'default' => '',
+    'scope' => array(
+      'attributes',
+    ),
+    'form' => array(
+      '#type' => 'textfield',
+      '#title' => t('Lang'),
+      '#description' => t('Enter a language code for the text within this menu item, if it is not English. Use <a href="@url">ISO 639-1 language codes</a>.', array('@url' => 'https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes')),
+      '#default_value' => '',
+    ),
+  );
+  // Add a hreflang attribute.
+  $attributes['hreflang'] = array(
+    'label' => t('HREF Lang'),
+    'enabled' => 1,
+    'default' => '',
+    'scope' => array(
+      'attributes',
+    ),
+    'form' => array(
+      '#type' => 'textfield',
+      '#title' => t('HREF Lang'),
+      '#description' => t('Enter a language code for the text that is on the page you are linking to, if it is not English. Use <a href="@url">ISO 639-1 language codes</a>.', array('@url' => 'https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes')),
+      '#default_value' => '',
+    ),
+  );
+}

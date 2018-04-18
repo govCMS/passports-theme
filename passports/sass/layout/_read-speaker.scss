@@ -15,24 +15,23 @@
         padding: 0;
       }
       a.rsbtn_play {
-        padding: 20px 0 0;
+        padding: 0;
+        margin: 20px 0 0;
         @include breakpoint(small) {
-          padding: 0;
+          margin: 0;
         }
       }
       .rsbtn_exp {
-        padding: 20px 0 0;
+        padding: 0;
+        margin: 20px 0 0;
         @include breakpoint(small) {
-          padding: 0;
+          margin: 0;
         }
         .rsbtn_powered {
-          top: 48px;
-          @include breakpoint(small) {
-            top: 28px;
-          }
+          top: 28px;
         }
         .rsbtn_status_overlay {
-          top: 21px;
+          top: 1px;
           @include breakpoint(small) {
             top: 1px;
           }

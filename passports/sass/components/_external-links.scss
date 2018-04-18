@@ -11,6 +11,7 @@ span.ext {
   height: 10px;
   padding-right: 12px;
   text-decoration: none;
+  margin-right: 3px;
 }
 span.mailto {
   background: url(../images/extlink_s.png) -20px center no-repeat;
@@ -18,6 +19,7 @@ span.mailto {
   height: 10px;
   padding-right: 12px;
   text-decoration: none;
+  margin-right: 3px;
 }
 
 /* Hide the extra spans when printing. */
@@ -26,5 +28,6 @@ span.mailto {
   span.mailto {
     display: none;
     padding: 0;
+    margin-right: 3px;
   }
 }

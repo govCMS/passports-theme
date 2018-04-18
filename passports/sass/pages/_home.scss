@@ -157,7 +157,7 @@
               @include breakpoint(small) {
                 width: 100%;
               }
-              &:first-child {
+              &:first-of-type {
                 @include breakpoint(small) {
                   margin: 0;
                 }

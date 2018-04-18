@@ -15,8 +15,8 @@
 
   <div class="header__inner clearfix">
     <?php if ($logo): ?>
-      <a href="https://dfat.gov.au" class="header__logo" id="dfat-logo" title="Go to Department of Foreign Affairs and Trade website">
-        <span class="element-invisible">Go to Department of Foreign Affairs and Trade Website</span>
+      <a href="https://dfat.gov.au" class="header__logo" id="dfat-logo" title="Go to the Department of Foreign Affairs and Trade website">
+        <span class="element-invisible">Go to the Department of Foreign Affairs and Trade Website</span>
         <img src="<?php print base_path() . drupal_get_path('theme', 'passports'); ?>/images/dfat-logo.png" alt="Department of Foreign Affairs and Trade logo" class="header__logo-image" />
       </a>
       <img src="<?php print base_path() . drupal_get_path('theme', 'passports'); ?>/images/dfat-print-logo.png" alt="Department of Foreign Affairs and Trade" class="header__logo-image" id="dfat-logo-print" />

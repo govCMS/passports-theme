@@ -13,39 +13,56 @@ table {
     margin: 0;
     padding: 10px 0;
   }
-  tr {
-    border-bottom: 1px solid $secondary-grey;
-    background-color: $primary-white;
-    &:last-child {
-      border-bottom: 0;
-    }
-    th {
-      background-color: $primary-dark-blue;
-      color: $primary-white;
-      padding: 10px;
-      border-right: 1px solid $secondary-grey;
-      border-bottom: none;
-      vertical-align: middle;
-      text-align: left;
-      text-transform: uppercase;
-      &:last-child {
-        border-right: none;
-      }
-      p {
+  thead {
+    tr {
+      th,
+      td {
+        background-color: $primary-dark-blue;
         color: $primary-white;
-        margin: 0;
+        padding: 10px;
+        border-right: 1px solid $secondary-grey;
+        border-bottom: none;
+        vertical-align: middle;
+        text-align: left;
+        text-transform: uppercase;
+        &:last-child {
+          border-right: none;
+        }
+        p {
+          color: $primary-white;
+          margin: 0;
+        }
       }
     }
-    td {
-      vertical-align: top;
-      text-align: left;
-      padding: 10px;
-      border-right: 1px solid $secondary-grey;
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid $secondary-grey;
+      background-color: $primary-white;
       &:last-child {
-        border-right: none;
+        border-bottom: 0;
       }
-      p {
-        margin: 0;
+      th {
+        font-weight: bold;
+        vertical-align: top;
+        text-align: left;
+        padding: 10px;
+        border-right: 1px solid $secondary-grey;
+        p {
+          margin: 0;
+        }
+      }
+      td {
+        vertical-align: top;
+        text-align: left;
+        padding: 10px;
+        border-right: 1px solid $secondary-grey;
+        &:last-child {
+          border-right: none;
+        }
+        p {
+          margin: 0;
+        }
       }
     }
   }

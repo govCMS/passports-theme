@@ -8,8 +8,21 @@
     padding: 30px 0 20px;
     border-top: none;
     background: none;
-    .pager-current {
-      background-color: $primary-dark-blue;
+    li {
+      padding: 0;
+      margin-right: 5px;
+      a {
+        padding: 0.2px 4px 1px;
+        &:hover,
+        &:focus {
+          background-color: $secondary-dark-blue;
+          color: $primary-white;
+        }
+      }
+      &.pager-current {
+        background-color: $primary-dark-blue;
+        padding: 1px 4px;
+      }
     }
   }
 }
