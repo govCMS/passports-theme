@@ -12,7 +12,7 @@
   <nav>
     <?php print render($title_prefix); ?>
     <?php if (isset($title) && !empty($title)): ?>
-      <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
+      <h3<?php print $title_attributes; ?>><?php print $title; ?></h3>
     <?php endif; ?>
     <?php print render($title_suffix); ?>
 

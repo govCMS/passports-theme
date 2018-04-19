@@ -9,6 +9,7 @@
 ?>
 
 <header class="header" id="header" role="banner">
+  <h2 class="element-invisible">Site header</h2>
   <div class="region-mobile-nav-container">
     <?php print render($page['mobile_nav']); ?>
   </div>

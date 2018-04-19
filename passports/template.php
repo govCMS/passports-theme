@@ -150,6 +150,7 @@ function passports_preprocess_entity(&$variables) {
 
     // Add a title class.
     $variables['title_attributes_array']['class'][] = 'bean-title';
+    $variables['title_attributes_array']['class'][] = 'block-title';
 
     // For some reason the bean module sets the title to the administration
     // title if there isn't one, but we don't want that so put it back how it

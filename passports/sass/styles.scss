@@ -12,12 +12,14 @@
   'utils/variables',
   'utils/mixins/breakpoints',
   'utils/mixins/rem',
-  'utils/mixins/clearfix';
+  'utils/mixins/clearfix',
+  'utils/mixins/element-invisible';
 
 // Base styles.
 @import
   'base/typography',
-  'base/clearfix';
+  'base/clearfix',
+  'base/element-invisible';
 
 // Layout styles of the page.
 @import 

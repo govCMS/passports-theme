@@ -22,6 +22,9 @@ body {
           display: flex;
           flex-direction: row;
         }
+        .block-title {
+          @extend %element-invisible;
+        }
         .block {
           flex: 1 0 0;
           @include breakpoint(smedium) {

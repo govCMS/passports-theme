@@ -5,6 +5,9 @@
 #header {
   background-color: $primary-purple;
   padding: 0;
+  .block-title {
+    @extend %element-invisible;
+  }
   .header__inner {
     max-width: 1020px;
     @include breakpoint(large) {

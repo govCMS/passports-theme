@@ -182,6 +182,20 @@ html #main ol li:last-child {
 }
 
 /**
+ * Accessibility features.
+ */
+/* element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+.element-invisible,
+#header .block-title,
+body #page .footer-container #footer .block-title {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/**
  * Styles for the header section.
  */
 #header {
