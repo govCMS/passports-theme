@@ -7,7 +7,6 @@
 /**
  * Fonts.
  */
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700");
 /**
  * Colours.
  */
@@ -435,6 +434,7 @@ body #page .footer-container #footer .block-title {
     padding: 0;
     width: 25px;
     height: 27px;
+    text-indent: -9999px;
     background-color: #0a7888;
     background-image: url(../images/icon-search-2x.png);
     background-size: 18px 18px;
@@ -1384,6 +1384,7 @@ html #page .node-news-article.view-mode-full .field-name-field-news-date {
   width: 25px;
   height: 27px;
   vertical-align: bottom;
+  text-indent: -9999px;
   background-color: #0a7888;
   background-image: url(../images/icon-search-2x.png);
   background-repeat: no-repeat;
@@ -1913,6 +1914,7 @@ body.cke_editable table tbody th {
   color: transparent;
   margin: 0 0 15px;
   box-shadow: none;
+  text-indent: -9999px;
   background-color: #0a7888;
   background-image: url(../images/icon-search-2x.png);
   background-size: 18px 18px;
