@@ -65,6 +65,8 @@ html {
 
 html h1,
 html h2,
+html #page #main form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend, #page #main form.webform-client-form fieldset.webform-component-fieldset legend
+html span.fieldset-legend,
 html h3,
 html h4,
 html h5,
@@ -84,7 +86,7 @@ html h1 {
   padding: 0 0 10px;
 }
 
-html h2 {
+html h2, html #page #main form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend, #page #main form.webform-client-form fieldset.webform-component-fieldset legend html span.fieldset-legend {
   line-height: 1.8rem;
   font-size: 1.8rem;
 }
@@ -620,7 +622,7 @@ body {
   color: #fff;
 }
 
-#main .highlight h1, #main .highlight h2, #main .highlight h3, #main .highlight h4, #main .highlight h5, #main .highlight h6 {
+#main .highlight h1, #main .highlight h2, #page #main .highlight form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend, #page #main form.webform-client-form fieldset.webform-component-fieldset legend .highlight span.fieldset-legend, #main .highlight h3, #main .highlight h4, #main .highlight h5, #main .highlight h6 {
   color: #fff;
   padding: 0 0 20px;
   margin: 0 0 20px;
@@ -1108,7 +1110,7 @@ body #page .footer-container #footer #block-bean-follow-us .field-name-field-bea
   margin-top: 0;
 }
 
-.front #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-further-information h2.pane-title {
+.front #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-further-information h2.pane-title, .front #page #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-further-information form.webform-client-form fieldset.webform-component-fieldset legend span.pane-title.fieldset-legend, #page .front #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-further-information form.webform-client-form fieldset.webform-component-fieldset legend span.pane-title.fieldset-legend, .front #page #main form.webform-client-form fieldset.webform-component-fieldset legend .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-further-information span.pane-title.fieldset-legend, #page .front #main form.webform-client-form fieldset.webform-component-fieldset legend .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-further-information span.pane-title.fieldset-legend {
   margin: 0;
   border-bottom: 1px dotted black;
   padding-bottom: 10px;
@@ -1159,12 +1161,12 @@ body #page .footer-container #footer #block-bean-follow-us .field-name-field-bea
   padding: 10px 20px 20px;
 }
 
-.front #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-news h2.pane-title {
+.front #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-news h2.pane-title, .front #page #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-news form.webform-client-form fieldset.webform-component-fieldset legend span.pane-title.fieldset-legend, #page .front #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-news form.webform-client-form fieldset.webform-component-fieldset legend span.pane-title.fieldset-legend, .front #page #main form.webform-client-form fieldset.webform-component-fieldset legend .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-news span.pane-title.fieldset-legend, #page .front #main form.webform-client-form fieldset.webform-component-fieldset legend .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-news span.pane-title.fieldset-legend {
   margin-top: 0;
   border-bottom: 1px dotted black;
 }
 
-.front #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-news h2.pane-title::before {
+.front #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-news h2.pane-title::before, .front #page #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-news form.webform-client-form fieldset.webform-component-fieldset legend span.pane-title.fieldset-legend::before, #page .front #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-news form.webform-client-form fieldset.webform-component-fieldset legend span.pane-title.fieldset-legend::before, .front #page #main form.webform-client-form fieldset.webform-component-fieldset legend .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-news span.pane-title.fieldset-legend::before, #page .front #main form.webform-client-form fieldset.webform-component-fieldset legend .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-news span.pane-title.fieldset-legend::before {
   content: url(../images/passports-panel-news.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -1514,6 +1516,8 @@ html #page .node-news-article.view-mode-full .field-name-field-news-date {
  */
 .page-node h1,
 .page-node h2,
+.page-node #page #main form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend, #page #main form.webform-client-form fieldset.webform-component-fieldset legend
+.page-node span.fieldset-legend,
 .page-node h3,
 .page-node h4,
 .page-node h5,
@@ -2472,80 +2476,101 @@ span.mailto {
 #page #main form.webform-client-form {
   border: none;
   padding: 0;
+  margin: 20px 0;
   overflow: auto;
+  color: black;
 }
 
-#page #main form.webform-client-form .form-item {
+#page #main form.webform-client-form fieldset.webform-component-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+#page #main form.webform-client-form fieldset.webform-component-fieldset legend {
+  border: none;
+  padding: 0;
+}
+
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper {
+  padding-left: 0;
+}
+
+@media (min-width: 760px) {
+  #page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper {
+    padding-left: 20px;
+  }
+}
+
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper .form-item {
   margin: 20px 0;
 }
 
-#page #main form.webform-client-form .form-item .form-item {
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper .form-item .form-item {
   margin-right: 10px;
 }
 
-#page #main form.webform-client-form .form-item .description {
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper .form-item .description {
   padding: 2px;
   margin: 0;
 }
 
-#page #main form.webform-client-form .form-item.form-item-checkbox, #page #main form.webform-client-form .form-item.form-item-checkboxes, #page #main form.webform-client-form .form-item.form-type-radio, #page #main form.webform-client-form .form-item.form-type-checkbox {
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper .form-item.form-item-checkbox, #page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper .form-item.form-item-checkboxes, #page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper .form-item.form-type-radio, #page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper .form-item.form-type-checkbox {
   padding-left: 1px;
   margin: 10px 0;
 }
 
-#page #main form.webform-client-form .form-item.webform-component-select label {
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper .form-item.webform-component-select label {
   vertical-align: top;
 }
 
-#page #main form.webform-client-form .form-item.webform-component-select select option {
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper .form-item.webform-component-select select option {
   padding: 0 5px;
 }
 
-#page #main form.webform-client-form .form-item.webform-component--form-number, #page #main form.webform-client-form .form-item.webform-component--passport-number {
-  margin: 0;
-  display: block;
-}
-
-@media (min-width: 980px) {
-  #page #main form.webform-client-form .form-item.webform-component--form-number, #page #main form.webform-client-form .form-item.webform-component--passport-number {
-    display: inline-block;
-  }
-}
-
-#page #main form.webform-client-form .form-item .webform-datepicker {
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper .form-item .webform-datepicker {
   margin-top: 10px;
 }
 
-#page #main form.webform-client-form .form-number-divider {
-  display: block;
-  margin: 10px 10px 10px 0;
-}
-
-@media (min-width: 980px) {
-  #page #main form.webform-client-form .form-number-divider {
-    display: inline-block;
-    margin: 0 10px 0 0;
-  }
-}
-
-#page #main form.webform-client-form input {
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper input {
   border-radius: 2px;
   margin-right: 10px;
   max-width: 100%;
+  box-sizing: border-box;
 }
 
-#page #main form.webform-client-form input[type=text] {
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper input[type=text] {
   background-color: #fff;
   border: 1px solid black;
+  width: 100%;
 }
 
-#page #main form.webform-client-form legend {
+@media (min-width: 760px) {
+  #page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper input[type=text] {
+    width: 400px;
+  }
+}
+
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper input[type=email] {
+  background-color: #fff;
+  border: 1px solid black;
+  width: 100%;
+}
+
+@media (min-width: 760px) {
+  #page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper input[type=email] {
+    width: 400px;
+  }
+}
+
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper legend {
   padding: 5px 10px;
   border: none;
   font-weight: 600;
 }
 
-#page #main form.webform-client-form label {
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper label {
   margin: 0 10px 10px 0;
 }
 

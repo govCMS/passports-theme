@@ -439,17 +439,6 @@ function passports_form_search_api_page_search_form_alter(&$form, &$form_state, 
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
- *
- * Alter the feedback form.
- */
-function passports_form_webform_client_form_76_alter(&$form, &$form_state, $form_id) {
-  $form['submitted']['form_number']['#prefix'] = '<div class="numbers-wrapper">';
-  $form['submitted']['passport_number']['#suffix'] = '</div>';
-  $form['submitted']['form_number']['#suffix'] = '<span class="form-number-divider">Or</span>';
-}
-
-/**
  * Implements hook_wysiwyg_editor_settings_alter().
  */
 function passports_wysiwyg_editor_settings_alter(&$settings, $context) {

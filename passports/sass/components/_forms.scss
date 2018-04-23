@@ -7,69 +7,87 @@
     form.webform-client-form {
       border: none;
       padding: 0;
+      margin: 20px 0;
       overflow: auto;
-      .form-item {
-        margin: 20px 0;
-        .form-item {
-          margin-right: 10px;
-        }
-        .description {
-          padding: 2px;
-          margin: 0;
-        }
-        &.form-item-checkbox,
-        &.form-item-checkboxes,
-        &.form-type-radio,
-        &.form-type-checkbox {
-          padding-left: 1px;
-          margin: 10px 0;
-        }
-        &.webform-component-select {
-          label {
-            vertical-align: top;
+      color: black;
+      fieldset.webform-component-fieldset {
+        border: none;
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+        legend {
+          border: none;
+          padding: 0;
+          span.fieldset-legend {
+            @extend h2;
           }
-          select {
-            option {
-              padding: 0 5px;
+        }
+        .fieldset-wrapper {
+          padding-left: 0;
+          @include breakpoint(small) {
+            padding-left: 20px;
+          }
+          .form-item {
+            margin: 20px 0;
+            .form-item {
+              margin-right: 10px;
+            }
+            .description {
+              padding: 2px;
+              margin: 0;
+            }
+            &.form-item-checkbox,
+            &.form-item-checkboxes,
+            &.form-type-radio,
+            &.form-type-checkbox {
+              padding-left: 1px;
+              margin: 10px 0;
+            }
+            &.webform-component-select {
+              label {
+                vertical-align: top;
+              }
+              select {
+                option {
+                  padding: 0 5px;
+                }
+              }
+            }
+            .webform-datepicker {
+              margin-top: 10px;
             }
           }
-        }
-        &.webform-component--form-number,
-        &.webform-component--passport-number {
-          margin: 0;
-          display: block;
-          @include breakpoint(medium) {
-            display: inline-block;
+          input {
+            border-radius: 2px;
+            margin-right: 10px;
+            max-width: 100%;
+            box-sizing: border-box;
+          }
+          input[type=text] {
+            background-color: $primary-white;
+            border: 1px solid black;
+            width: 100%;
+            @include breakpoint(small) {
+              width: 400px;
+            }
+          }
+          input[type=email] {
+            background-color: $primary-white;
+            border: 1px solid black;
+            width: 100%;
+            @include breakpoint(small) {
+              width: 400px;
+            }
+          }
+          legend {
+            padding: 5px 10px;
+            border: none;
+            font-weight: 600;
+          }
+          label {
+            margin: 0 10px 10px 0;
           }
         }
-        .webform-datepicker {
-          margin-top: 10px;
-        }
-      }
-      .form-number-divider {
-        display: block;
-        margin: 10px 10px 10px 0;
-        @include breakpoint(medium) {
-          display: inline-block;
-          margin: 0 10px 0 0;
-        }
-      }
-      input {
-        border-radius: 2px;
-        margin-right: 10px;
-        max-width: 100%;
-      }
-      input[type=text] {
-        background-color: $primary-white;
-        border: 1px solid black;
-      }
-      legend {
-        padding: 5px 10px;
-        border: none;
-        font-weight: 600;
-      }
-      label {
-        margin: 0 10px 10px 0;
       }
     }
   }
