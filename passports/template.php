@@ -459,17 +459,6 @@ function passports_webform_element_text($variables) {
     }
   }
 
-  // Wrap long values at 65 characters, allowing for a few fieldset indents.
-  // It's common courtesy to wrap at 75 characters in e-mails.
-  if ($is_group && drupal_strlen($value) > 65) {
-    $value = wordwrap($value, 65, "\n");
-    $lines = explode("\n", $value);
-    foreach ($lines as $key => $line) {
-      $lines[$key] = '  ' . $line;
-    }
-    $value = implode("\n", $lines);
-  }
-
   // Add the value to the output. Add a newline before the response if needed.
   $output .= (strpos($value, "\n") === FALSE ? ' ' : "\n") . $value;
 
