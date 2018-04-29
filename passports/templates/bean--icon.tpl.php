@@ -36,7 +36,7 @@
 
   <?php if (!empty($title)): ?>
     <?php print render($title_prefix); ?>
-    <h3<?php print $title_attributes; ?>><?php print $title; ?></h3>
+    <<?php print $title_element; ?> <?php print $title_attributes; ?>><?php print $title; ?></<?php print $title_element; ?>>
     <?php print render($title_suffix); ?>
   <?php endif; ?>
 

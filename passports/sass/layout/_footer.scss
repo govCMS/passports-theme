@@ -96,10 +96,14 @@ body {
                 }
               }
               .helpline {
-                text-align: right;
-                margin-top: -15px;
+                text-align: left;
+                margin-top: 25px;
+                @include breakpoint(xsmall) {
+                  text-align: right;
+                  margin-top: -15px;
+                }
                 @include breakpoint(smedium) {
-                  padding-top: 10px;
+                  padding-top: 20px;
                   margin-top: 0;
                 }
                 p::before {

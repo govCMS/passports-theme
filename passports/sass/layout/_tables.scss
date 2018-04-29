@@ -75,20 +75,24 @@ table {
   }
   &.borderless {
     border: none;
-    tr {
-      border-bottom: none;
-      background-color: none;
-      th {
-        background-color: $primary-white;
-        color: black;
-        border-right: none;
+    thead,
+    tbody {
+      tr {
         border-bottom: none;
-        p {
+        background-color: none;
+        th,
+        td {
+          background-color: $primary-white;
           color: black;
+          border-right: none;
+          border-bottom: none;
+          p {
+            color: black;
+          }
         }
-      }
-      td {
-        border-right: none;
+        td {
+          border-right: none;
+        }
       }
     }
   }

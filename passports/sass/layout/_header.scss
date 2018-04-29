@@ -89,14 +89,14 @@
               li.sf-depth-1 {
                 flex: 1;
                 white-space: normal;
-                border-right: 1px solid $primary-aqua;
+                border-right: 1px solid $secondary-aqua;
                 &.active-trail {
                   a {
                     background-color: $primary-aqua;
                   }
                 }
                 &:first-child {
-                  border-left: 1px solid $primary-aqua;
+                  border-left: 1px solid $secondary-aqua;
                   a {
                     padding-left: 22px;
                   }
@@ -111,12 +111,12 @@
                   }
                   ul {
                     background: $primary-dark-blue;
-                    border: 1px solid $primary-aqua;
+                    border: 1px solid $secondary-aqua;
                     padding: 0;
                     li {
                       display: flex;
                       white-space: normal;
-                      border-bottom: 1px solid $primary-aqua;
+                      border-bottom: 1px solid $secondary-aqua;
                       border-top: none;
                       &:last-child {
                         border-bottom: none;

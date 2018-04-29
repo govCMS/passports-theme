@@ -37,9 +37,12 @@ function passports_preprocess_page(&$variables, $hook) {
  */
 function passports_process_node(&$variables, $hook) {
   $node = $variables['node'];
-  // If we're using DS for layout.
-  if ($layout = ds_get_layout('node', $node->type, $variables['view_mode'])) {
-    // For a node, use an article wrapper, like the default node template does.
+  // For a node, use an article wrapper, except on full node pages
+  // where the article tag is in the page template.
+  // This will also apply to display suite templates.
+  if ($variables['view_mode'] === 'full') {
+    $variables['layout_wrapper'] = 'div';
+  } else {
     $variables['layout_wrapper'] = 'article';
   }
 }
@@ -96,6 +99,15 @@ function passports_preprocess_field(&$variables, $hook) {
  */
 function passports_preprocess_block(&$variables, $hook) {
   $block = $variables['block'];
+
+  if ($block->module == 'menu_block') {
+    // Since we are making these use nav elements in the template, remove the
+    // redundant navigation role.
+    if (isset($variables['attributes_array']['role'])) {
+      unset($variables['attributes_array']['role']);
+    }
+  }
+
   if ($block->module == 'bean' && isset($variables['elements']['bean'][$block->delta]['#entity'])) {
     // Get the bean object.
     $bean = $variables['elements']['bean'][$block->delta]['#entity'];
@@ -143,10 +155,17 @@ function passports_preprocess_entity(&$variables) {
     // reference field.
     if ($variables['view_mode'] == 'aside') {
       $variables['wrapper_element'] = 'aside';
+      $variables['title_element'] = 'h2';
     }
     else {
       $variables['wrapper_element'] = 'article';
+      $variables['title_element'] = 'h3';
     }
+    // If it's a single image without a title then it is not a proper article or
+    // aside so leave it as a div.
+    if ($bean->type == 'image' && !$bean->title) {
+      $variables['wrapper_element'] = 'div';
+    } 
 
     // Add a title class.
     $variables['title_attributes_array']['class'][] = 'bean-title';
@@ -412,6 +431,65 @@ function passports_pager($variables) {
       'attributes' => array('class' => array('pager')),
     )) . '</nav>';
   }
+}
+
+
+/**
+ * Output a form element in plain text format.
+ */
+function passports_webform_element_text($variables) {
+  $element = $variables['element'];
+  $value = $variables['element']['#children'];
+
+  $output = '';
+  $is_group = webform_component_feature($element['#webform_component']['type'], 'group');
+
+  // Output the element title.
+  if (isset($element['#title'])) {
+    if ($is_group) {
+      $output .= '==' . $element['#title'] . '==';
+    }
+    elseif (!in_array(drupal_substr($element['#title'], -1), array('?', ':', '!', '%', ';', '@'))) {
+      $output .= $element['#title'] . ':';
+    }
+    else {
+      $output .= $element['#title'];
+    }
+  }
+
+  // Wrap long values at 65 characters, allowing for a few fieldset indents.
+  // It's common courtesy to wrap at 75 characters in e-mails.
+  if ($is_group && drupal_strlen($value) > 65) {
+    $value = wordwrap($value, 65, "\n");
+    $lines = explode("\n", $value);
+    foreach ($lines as $key => $line) {
+      $lines[$key] = '  ' . $line;
+    }
+    $value = implode("\n", $lines);
+  }
+
+  // Add the value to the output. Add a newline before the response if needed.
+  $output .= (strpos($value, "\n") === FALSE ? ' ' : "\n") . $value;
+
+  // Indent fieldsets.
+  if ($is_group) {
+    $lines = explode("\n", $output);
+    foreach ($lines as $number => $line) {
+      if (strlen($line)) {
+        $lines[$number] = '  ' . $line;
+      }
+    }
+    $output = implode("\n", $lines);
+    $output .= "\n";
+  }
+
+  if ($output) {
+    $output .= "\n";
+    // Add an additional line break to enhance readability.
+    $output .= "\n";
+  }
+
+  return $output;
 }
 
 /**

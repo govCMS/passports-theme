@@ -3,9 +3,9 @@
  */
 
 html {
-  font-size: 14.5px;
+  font-size: 90.625%;
   font-family: $font-stack-sans;
-  line-height: 17px;
+  line-height: 1.1724;
   letter-spacing: 0.1px;
   overflow-wrap: break-word;
 
@@ -31,23 +31,23 @@ html {
   }
 
   h2 {
-    line-height: 1.8rem;
-    font-size: 1.8rem;
+    line-height: 2rem;
+    font-size: 2rem;
   }
 
   h3 {
-    line-height: 1.6rem;
-    font-size: 1.6rem;
+    line-height: 1.75rem;
+    font-size: 1.75rem;
   }
 
   h4 {
-    line-height: 1.4rem;
-    font-size: 1.4rem;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
   }
 
   h5 {
-    line-height: 1.2rem;
-    font-size: 1.2rem;
+    line-height: 1.25rem;
+    font-size: 1.25rem;
   }
 
   h6 {

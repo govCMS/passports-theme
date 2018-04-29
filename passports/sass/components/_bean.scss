@@ -143,6 +143,8 @@
     &.bean-link {
       h3.bean-title {
         color: $primary-white;
+        padding: 20px 0;
+        margin: 0 20px;
       }
       a.wrapper-link {
         position: relative;
@@ -151,36 +153,38 @@
         width: 100%;
         text-decoration: none;
         color: $primary-white;
-        background: radial-gradient($quarternary-aqua, $tertiary-aqua);
+        background: $secondary-aqua;
         background-repeat: no-repeat;
         background-size: 100% 100%;
         background-position: 50% 50%;
         &:hover,
         &:focus {
-          background: radial-gradient($quarternary-aqua, $secondary-dark-blue);
+          background: $secondary-dark-blue;
         }
+      }
+      .field-name-field-block-category {
+        border-top: 1px dotted #fff;
+        position: absolute;
+        padding: 20px 0;
+        margin: 0 20px;
+        text-transform: uppercase;
+        display: block;
+        bottom: 0;
+        left: 0;
+        right: 0;
         &::after {
           content: '';
           position: absolute;
           display: block;
-          bottom: 20px;
-          right: 20px;
+          text-align: right;
+          bottom: 23px;
+          right: 0;
           width: 6px;
           height: 10px;
           background-image: url(../images/arrow-right-icon-light.png);
           background-position: 0 0;
           background-repeat: no-repeat;
         }
-      }
-      .field-name-field-block-category {
-        padding: 20px 0;
-        margin: 0 20px;
-        border-bottom: 1px dotted $primary-white;
-        text-transform: uppercase;
-      }
-      h3.bean-title {
-        padding: 20px;
-        margin: 0;
       }
     }
     &.bean-image {

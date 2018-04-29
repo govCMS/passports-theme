@@ -34,13 +34,9 @@
     <a class="wrapper-link" href="<?php print $link_to; ?>">
   <?php endif; ?>
 
-  <?php if (!empty($content['field_block_category'])): ?>
-    <?php print render($content['field_block_category']); ?>
-  <?php endif; ?>
-
   <?php if (!empty($title)): ?>
     <?php print render($title_prefix); ?>
-    <h3<?php print $title_attributes; ?>><?php print $title; ?></h3>
+    <<?php print $title_element; ?> <?php print $title_attributes; ?>><?php print $title; ?></<?php print $title_element; ?>>
     <?php print render($title_suffix); ?>
   <?php endif; ?>
 

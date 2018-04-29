@@ -38,7 +38,6 @@
       <div class="gov-front-lower-inner">
         <?php if (!empty($content['left'])) : ?>
           <section class="alpha grid-4 gov-front-left gov-front-col">
-            <h2 class="element-invisible">Content left</h2>
             <?php print $content['left'];?>
           </section>
         <?php endif; ?>

@@ -56,17 +56,17 @@
  * Styling of base typography.
  */
 html {
-  font-size: 14.5px;
+  font-size: 90.625%;
   font-family: "Source Sans Pro", sans-serif;
-  line-height: 17px;
+  line-height: 1.1724;
   letter-spacing: 0.1px;
   overflow-wrap: break-word;
 }
 
 html h1,
 html h2,
-html #page #main form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend, #page #main form.webform-client-form fieldset.webform-component-fieldset legend
-html span.fieldset-legend,
+html #page #main form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend,
+#page #main form.webform-client-form fieldset.webform-component-fieldset legend html span.fieldset-legend,
 html h3,
 html h4,
 html h5,
@@ -86,24 +86,27 @@ html h1 {
   padding: 0 0 10px;
 }
 
-html h2, html #page #main form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend, #page #main form.webform-client-form fieldset.webform-component-fieldset legend html span.fieldset-legend {
-  line-height: 1.8rem;
-  font-size: 1.8rem;
+
+html h2,
+html #page #main form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend,
+#page #main form.webform-client-form fieldset.webform-component-fieldset legend html span.fieldset-legend {
+  line-height: 2rem;
+  font-size: 2rem;
 }
 
 html h3 {
-  line-height: 1.6rem;
-  font-size: 1.6rem;
+  line-height: 1.75rem;
+  font-size: 1.75rem;
 }
 
 html h4 {
-  line-height: 1.4rem;
-  font-size: 1.4rem;
+  line-height: 1.5rem;
+  font-size: 1.5rem;
 }
 
 html h5 {
-  line-height: 1.2rem;
-  font-size: 1.2rem;
+  line-height: 1.25rem;
+  font-size: 1.25rem;
 }
 
 html h6 {
@@ -314,13 +317,13 @@ body #page .footer-container #footer .block-title {
     -ms-flex: 1;
         flex: 1;
     white-space: normal;
-    border-right: 1px solid #0a7888;
+    border-right: 1px solid #1f7fa8;
   }
   .region-nav-container .region-navigation .block-superfish nav .block__content ul.menu li.sf-depth-1.active-trail a {
     background-color: #0a7888;
   }
   .region-nav-container .region-navigation .block-superfish nav .block__content ul.menu li.sf-depth-1:first-child {
-    border-left: 1px solid #0a7888;
+    border-left: 1px solid #1f7fa8;
   }
   .region-nav-container .region-navigation .block-superfish nav .block__content ul.menu li.sf-depth-1:first-child a {
     padding-left: 22px;
@@ -337,14 +340,14 @@ body #page .footer-container #footer .block-title {
   }
   .region-nav-container .region-navigation .block-superfish nav .block__content ul.menu li.sf-depth-1.menuparent ul {
     background: #161e45;
-    border: 1px solid #0a7888;
+    border: 1px solid #1f7fa8;
     padding: 0;
   }
   .region-nav-container .region-navigation .block-superfish nav .block__content ul.menu li.sf-depth-1.menuparent ul li {
     display: -ms-flexbox;
     display: flex;
     white-space: normal;
-    border-bottom: 1px solid #0a7888;
+    border-bottom: 1px solid #1f7fa8;
     border-top: none;
   }
   .region-nav-container .region-navigation .block-superfish nav .block__content ul.menu li.sf-depth-1.menuparent ul li:last-child {
@@ -374,14 +377,14 @@ body #page .footer-container #footer .block-title {
   }
   .region-nav-container .region-navigation .block-superfish nav .block__content ul.menu li.sf-depth-1.menuparent ul li a:hover, .region-nav-container .region-navigation .block-superfish nav .block__content ul.menu li.sf-depth-1.menuparent ul li a:focus {
     color: #fff;
-    background-color: #0da2b8;
+    background-color: #1f7fa8;
   }
   .region-nav-container .region-navigation .block-superfish nav .block__content ul.menu li.sf-depth-1.menuparent ul li.active-trail > a {
     background-color: #0a7888;
   }
   .region-nav-container .region-navigation .block-superfish nav .block__content ul.menu li.sf-depth-1.menuparent ul li.active-trail > a:hover, .region-nav-container .region-navigation .block-superfish nav .block__content ul.menu li.sf-depth-1.menuparent ul li.active-trail > a:focus {
     color: #fff;
-    background-color: #0da2b8;
+    background-color: #1f7fa8;
   }
   .region-nav-container .region-navigation .block-superfish nav .block__content ul.menu li.sf-depth-1 a {
     width: 100%;
@@ -407,7 +410,7 @@ body #page .footer-container #footer .block-title {
   }
   .region-nav-container .region-navigation .block-superfish nav .block__content ul.menu li.sf-depth-1 a:hover, .region-nav-container .region-navigation .block-superfish nav .block__content ul.menu li.sf-depth-1 a:focus {
     color: #fff;
-    background-color: #0da2b8;
+    background-color: #1f7fa8;
   }
   .region-nav-container .region-navigation .block-search-api-page {
     -ms-flex: 1.3;
@@ -444,7 +447,7 @@ body #page .footer-container #footer .block-title {
     transition: all .2s ease-in-out;
   }
   .region-nav-container .region-navigation .block-search-api-page .block__content #search-api-page-search-form-site-search .form-submit:hover, .region-nav-container .region-navigation .block-search-api-page .block__content #search-api-page-search-form-site-search .form-submit:focus {
-    background-color: #0da2b8;
+    background-color: #1f7fa8;
   }
 }
 
@@ -672,13 +675,13 @@ blockquote {
   width: 100%;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 760px) {
   .media-third_width_scaled {
     width: 50%;
   }
 }
 
-@media (min-width: 760px) {
+@media (min-width: 840px) {
   .media-third_width_scaled {
     width: 33%;
   }
@@ -688,13 +691,13 @@ blockquote {
   width: 100%;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 760px) {
   .media-quarter_width_scaled {
     width: 50%;
   }
 }
 
-@media (min-width: 760px) {
+@media (min-width: 840px) {
   .media-quarter_width_scaled {
     width: 25%;
   }
@@ -702,6 +705,10 @@ blockquote {
 
 .media.media-element-container {
   margin-bottom: 10px;
+}
+
+.media.media-element-container img {
+  width: 100%;
 }
 
 .media .content a .field-name-field-image-caption {
@@ -778,8 +785,8 @@ table thead tr td:last-child {
 
 table thead tr th p, table thead tr th html #main .media-p, html #main table thead tr th .media-p,
 table thead tr td p,
-table thead tr td html #main .media-p, html #main
-table thead tr td .media-p {
+table thead tr td html #main .media-p,
+html #main table thead tr td .media-p {
   color: #fff;
   margin: 0;
 }
@@ -828,23 +835,37 @@ table.borderless {
   border: none;
 }
 
-table.borderless tr {
+table.borderless thead tr,
+table.borderless tbody tr {
   border-bottom: none;
   background-color: none;
 }
 
-table.borderless tr th {
+table.borderless thead tr th,
+table.borderless thead tr td,
+table.borderless tbody tr th,
+table.borderless tbody tr td {
   background-color: #fff;
   color: black;
   border-right: none;
   border-bottom: none;
 }
 
-table.borderless tr th p, table.borderless tr th html #main .media-p, html #main table.borderless tr th .media-p {
+table.borderless thead tr th p, table.borderless thead tr th html #main .media-p, html #main table.borderless thead tr th .media-p,
+table.borderless thead tr td p,
+table.borderless thead tr td html #main .media-p,
+html #main table.borderless thead tr td .media-p,
+table.borderless tbody tr th p,
+table.borderless tbody tr th html #main .media-p,
+html #main table.borderless tbody tr th .media-p,
+table.borderless tbody tr td p,
+table.borderless tbody tr td html #main .media-p,
+html #main table.borderless tbody tr td .media-p {
   color: black;
 }
 
-table.borderless tr td {
+table.borderless thead tr td,
+table.borderless tbody tr td {
   border-right: none;
 }
 
@@ -1000,13 +1021,20 @@ body #page .footer-container #footer #block-bean-follow-us .field-name-field-bea
 }
 
 body #page .footer-container #footer #block-bean-follow-us .field-name-field-bean-text .field-items .helpline {
-  text-align: right;
-  margin-top: -15px;
+  text-align: left;
+  margin-top: 25px;
+}
+
+@media (min-width: 480px) {
+  body #page .footer-container #footer #block-bean-follow-us .field-name-field-bean-text .field-items .helpline {
+    text-align: right;
+    margin-top: -15px;
+  }
 }
 
 @media (min-width: 840px) {
   body #page .footer-container #footer #block-bean-follow-us .field-name-field-bean-text .field-items .helpline {
-    padding-top: 10px;
+    padding-top: 20px;
     margin-top: 0;
   }
 }
@@ -1195,7 +1223,7 @@ body #page .footer-container #footer #block-bean-follow-us .field-name-field-bea
 
 .front #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-news .more-link a:hover, .front #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-left .panel-pane.pane-news .more-link a:focus {
   color: #fff;
-  background-color: #0da2b8;
+  background-color: #1f7fa8;
 }
 
 .front #main .gov-front-layout .gov-front-lower .gov-front-lower-inner .gov-front-right {
@@ -1263,7 +1291,9 @@ html #page .view-news .view-content .item-list > ol li.views-row {
 }
 
 html #page .view-news .view-content .item-list > ul li.views-row p, html #page .view-news .view-content .item-list > ul li.views-row #main .media-p, html #main #page .view-news .view-content .item-list > ul li.views-row .media-p,
-html #page .view-news .view-content .item-list > ol li.views-row p, html #page .view-news .view-content .item-list > ol li.views-row #main .media-p, html #main #page .view-news .view-content .item-list > ol li.views-row .media-p {
+html #page .view-news .view-content .item-list > ol li.views-row p,
+html #page .view-news .view-content .item-list > ol li.views-row #main .media-p,
+html #main #page .view-news .view-content .item-list > ol li.views-row .media-p {
   margin: 10px 0;
 }
 
@@ -1358,7 +1388,7 @@ html #page .node-news-article.view-mode-teaser .field-name-node-link a {
 
 html #page .node-news-article.view-mode-teaser .field-name-node-link a:hover, html #page .node-news-article.view-mode-teaser .field-name-node-link a:focus {
   color: #fff;
-  background-color: #0da2b8;
+  background-color: #1f7fa8;
 }
 
 html #page .node-news-article.view-mode-full .field-name-field-news-date {
@@ -1401,7 +1431,7 @@ html #page .node-news-article.view-mode-full .field-name-field-news-date {
 }
 
 #main #search-api-page-search-form .form-submit:hover, #main #search-api-page-search-form .form-submit:focus {
-  background-color: #0da2b8;
+  background-color: #1f7fa8;
 }
 
 #main .search-api-page-results .search-results {
@@ -1499,7 +1529,7 @@ html #page .node-news-article.view-mode-full .field-name-field-news-date {
 
 #main .search-api-page-results .search-results .search-result .search-info .read-more a:hover, #main .search-api-page-results .search-results .search-result .search-info .read-more a:focus {
   color: #fff;
-  background-color: #0da2b8;
+  background-color: #1f7fa8;
 }
 
 /**
@@ -1516,13 +1546,13 @@ html #page .node-news-article.view-mode-full .field-name-field-news-date {
  */
 .page-node h1,
 .page-node h2,
-.page-node #page #main form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend, #page #main form.webform-client-form fieldset.webform-component-fieldset legend
-.page-node span.fieldset-legend,
+.page-node #page #main form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend,
+#page #main form.webform-client-form fieldset.webform-component-fieldset legend .page-node span.fieldset-legend,
 .page-node h3,
 .page-node h4,
 .page-node h5,
 .page-node h6 {
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .page-node a {
@@ -1681,18 +1711,17 @@ body.cke_editable table tbody th {
   color: #fff;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.button, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.form-submit {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.button,
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .form-submit {
   color: #fff;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button a, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.button a, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.form-submit a {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button a, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.button a, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .form-submit a {
   color: #fff;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-opener.form-submit {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button,
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.form-submit {
   display: block;
   padding: 5px;
   width: 30px;
@@ -1701,22 +1730,20 @@ body.cke_editable table tbody th {
   margin: 0 0 0 15px;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-opener.form-submit:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-opener.form-submit:focus {
-  background-color: #0da2b8;
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button:hover,
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.form-submit:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button:focus,
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.form-submit:focus {
+  background-color: #1f7fa8;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-opener.form-submit .lines {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.form-submit .lines {
   position: relative;
   display: block;
   width: 20px;
   height: 20px;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines .line, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines .line, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-opener.form-submit .lines .line {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines .line, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines .line, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.form-submit .lines .line {
   display: block;
   background: #fff;
   width: 20px;
@@ -1726,40 +1753,34 @@ body.cke_editable table tbody th {
   transition: all .4s;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines .line.line-1, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines .line.line-1, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-opener.form-submit .lines .line.line-1 {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines .line.line-1, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines .line.line-1, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.form-submit .lines .line.line-1 {
   top: 0;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines .line.line-2, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines .line.line-2, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-opener.form-submit .lines .line.line-2 {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines .line.line-2, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines .line.line-2, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.form-submit .lines .line.line-2 {
   top: 8px;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines .line.line-3, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines .line.line-3, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-opener.form-submit .lines .line.line-3 {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines .line.line-3, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines .line.line-3, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.form-submit .lines .line.line-3 {
   top: 16px;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener.close .line-1, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.close.button .line-1, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-opener.close.form-submit .line-1 {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener.close .line-1, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.close.button .line-1, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.close.form-submit .line-1 {
   -ms-transform: translateY(8px) translateX(0) rotate(45deg);
       transform: translateY(8px) translateX(0) rotate(45deg);
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener.close .line-2, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.close.button .line-2, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-opener.close.form-submit .line-2 {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener.close .line-2, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.close.button .line-2, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.close.form-submit .line-2 {
   opacity: 0;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener.close .line-3, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.close.button .line-3, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-opener.close.form-submit .line-3 {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener.close .line-3, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.close.button .line-3, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.close.form-submit .line-3 {
   -ms-transform: translateY(-8px) translateX(0) rotate(-45deg);
       transform: translateY(-8px) translateX(0) rotate(-45deg);
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-expander.form-submit {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button,
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit {
   position: absolute;
   right: 0;
   top: 0;
@@ -1768,27 +1789,28 @@ body.cke_editable table tbody th {
   height: 57px;
   margin: 0;
   padding: 20px;
-  border-left: 1px solid #0da2b8;
+  border-left: 1px solid #269ed1;
+  border-bottom: 1px solid #269ed1;
   background-color: #161e45;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-expander.form-submit:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-expander.form-submit:focus {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:hover,
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:focus,
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit:focus {
   background-color: #0a7888;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-expander.form-submit:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-expander.form-submit:after {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:before,
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:after,
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit:after {
   content: '';
   position: absolute;
   background-color: #fff;
   transition: transform .25s ease-out;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-expander.form-submit:before {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:before,
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit:before {
   top: 33%;
   left: 48%;
   width: 4px;
@@ -1796,8 +1818,8 @@ body.cke_editable table tbody th {
   margin-left: -1px;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-expander.form-submit:after {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:after,
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit:after {
   top: 49%;
   left: 32%;
   width: 20px;
@@ -1805,28 +1827,28 @@ body.cke_editable table tbody th {
   margin-top: -1px;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander.collapse, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.collapse.button, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-expander.collapse.form-submit {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander.collapse, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.collapse.button,
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.collapse.form-submit {
   cursor: pointer;
   background-color: #0086b1;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander.collapse:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.collapse.button:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-expander.collapse.form-submit:before {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander.collapse:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.collapse.button:before,
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.collapse.form-submit:before {
   -ms-transform: rotate(90deg);
       transform: rotate(90deg);
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander.collapse:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.collapse.button:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-expander.collapse.form-submit:after {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander.collapse:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.collapse.button:after,
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.collapse.form-submit:after {
   -ms-transform: rotate(180deg);
       transform: rotate(180deg);
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-expander.form-submit:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
-.menu-expander.form-submit:focus {
-  background-color: #0da2b8;
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:hover,
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:focus,
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit:focus {
+  background-color: #1f7fa8;
 }
 
 .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper > ul > li.menu__item:first-child {
@@ -1848,7 +1870,7 @@ body.cke_editable table tbody th {
   position: relative;
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid #0da2b8;
+  border-bottom: 1px solid #269ed1;
 }
 
 .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper ul li.menu__item.active {
@@ -1860,7 +1882,7 @@ body.cke_editable table tbody th {
 }
 
 .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper ul li.menu__item:first-child {
-  border-top: 1px solid #0da2b8;
+  border-top: 1px solid #269ed1;
 }
 
 .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper ul li.menu__item:last-child {
@@ -1875,7 +1897,7 @@ body.cke_editable table tbody th {
 }
 
 .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper ul li.menu__item a.menu__link:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper ul li.menu__item a.menu__link:focus {
-  background-color: #0da2b8;
+  background-color: #1f7fa8;
 }
 
 .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper ul li.menu__item.is-leaf a.menu__link {
@@ -1927,7 +1949,7 @@ body.cke_editable table tbody th {
 }
 
 .region-mobile-nav-container .region-mobile-nav .block-search-api-page .form-submit:hover, .region-mobile-nav-container .region-mobile-nav .block-search-api-page .form-submit:focus {
-  background-color: #0da2b8;
+  background-color: #1f7fa8;
 }
 
 html.no-js .region-mobile-nav .menu-block-wrapper ul {
@@ -1970,7 +1992,7 @@ button:hover, a.button:hover,
 .form-submit:hover, button:focus, a.button:focus,
 .form-submit:focus {
   color: #fff;
-  background-color: #0da2b8;
+  background-color: #1f7fa8;
   outline: none;
 }
 
@@ -2166,6 +2188,8 @@ a#edit-cancel {
 
 #main .entity-bean.bean-link h3.bean-title {
   color: #fff;
+  padding: 20px 0;
+  margin: 0 20px;
 }
 
 #main .entity-bean.bean-link a.wrapper-link {
@@ -2175,39 +2199,40 @@ a#edit-cancel {
   width: 100%;
   text-decoration: none;
   color: #fff;
-  background: radial-gradient(#269ed1, #0086b1);
+  background: #1f7fa8;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: 50% 50%;
 }
 
 #main .entity-bean.bean-link a.wrapper-link:hover, #main .entity-bean.bean-link a.wrapper-link:focus {
-  background: radial-gradient(#269ed1, #12355f);
+  background: #12355f;
 }
 
-#main .entity-bean.bean-link a.wrapper-link::after {
+#main .entity-bean.bean-link .field-name-field-block-category {
+  border-top: 1px dotted #fff;
+  position: absolute;
+  padding: 20px 0;
+  margin: 0 20px;
+  text-transform: uppercase;
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#main .entity-bean.bean-link .field-name-field-block-category::after {
   content: '';
   position: absolute;
   display: block;
-  bottom: 20px;
-  right: 20px;
+  text-align: right;
+  bottom: 23px;
+  right: 0;
   width: 6px;
   height: 10px;
   background-image: url(../images/arrow-right-icon-light.png);
   background-position: 0 0;
   background-repeat: no-repeat;
-}
-
-#main .entity-bean.bean-link .field-name-field-block-category {
-  padding: 20px 0;
-  margin: 0 20px;
-  border-bottom: 1px dotted #fff;
-  text-transform: uppercase;
-}
-
-#main .entity-bean.bean-link h3.bean-title {
-  padding: 20px;
-  margin: 0;
 }
 
 #main .entity-bean.bean-image {
@@ -2572,6 +2597,10 @@ span.mailto {
 
 #page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper label {
   margin: 0 10px 10px 0;
+}
+
+#page #main form.webform-client-form .webform-component--personal-details-privacy-policy p, #page html #main form.webform-client-form .webform-component--personal-details-privacy-policy .media-p, html #page #main form.webform-client-form .webform-component--personal-details-privacy-policy .media-p {
+  color: #161e45;
 }
 
 /**

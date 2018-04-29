@@ -16,25 +16,28 @@
 }
 .media-third_width_scaled {
   width: 100%;
-  @include breakpoint(xsmall) {
+  @include breakpoint(small) {
     width: 50%;
   }
-  @include breakpoint(small) {
+  @include breakpoint(smedium) {
     width: 33%;
   }
 }
 .media-quarter_width_scaled {
   width: 100%;
-  @include breakpoint(xsmall) {
+  @include breakpoint(small) {
     width: 50%;
   }
-  @include breakpoint(small) {
+  @include breakpoint(smedium) {
     width: 25%;
   }
 }
 .media {
   &.media-element-container {
     margin-bottom: 10px;
+    img {
+      width: 100%;
+    }
   }
   .content {
     a {

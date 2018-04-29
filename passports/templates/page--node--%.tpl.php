@@ -44,7 +44,7 @@
   <?php endif; ?>
 
   <div id="main">
-    <div id="content" class="column" role="main">
+    <article id="content" class="column" role="main">
 
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
@@ -64,7 +64,7 @@
       <?php endif; ?>
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
-    </div>
+    </article>
 
     <?php
       // Render the sidebars to see if there's anything in them.

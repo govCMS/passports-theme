@@ -80,7 +80,8 @@
           height: 57px;
           margin: 0;
           padding: 20px;
-          border-left: 1px solid $secondary-aqua;
+          border-left: 1px solid $quarternary-aqua;
+          border-bottom: 1px solid $quarternary-aqua;
           background-color: $primary-dark-blue;
           &:hover,
           &:focus {
@@ -149,7 +150,7 @@
           position: relative;
           margin: 0;
           padding: 0;
-          border-bottom: 1px solid $secondary-aqua;
+          border-bottom: 1px solid $quarternary-aqua;
           &.active {
             background-color: $primary-aqua;
           }
@@ -158,7 +159,7 @@
           }
 
           &:first-child {
-            border-top: 1px solid $secondary-aqua;
+            border-top: 1px solid $quarternary-aqua;
           }
           &:last-child {
             border-bottom: none;
