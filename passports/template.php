@@ -448,6 +448,8 @@ function passports_webform_element_text($variables) {
   if (isset($element['#title'])) {
     if ($is_group) {
       $output .= '==' . $element['#title'] . '==';
+      // Add an extra new line after the group name.
+      $output .= "\n";
     }
     elseif (!in_array(drupal_substr($element['#title'], -1), array('?', ':', '!', '%', ';', '@'))) {
       $output .= $element['#title'] . ':';
