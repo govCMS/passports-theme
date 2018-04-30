@@ -625,42 +625,42 @@ function passports_page_alter(&$page) {
     'data' => array(
       'extlink' => array(
         // Open external links in a new window.
-        'extTarget'     => 0,
+        'extTarget' => 0,
         // The class to add to external links. Using 'ext' will place an icon
         // next to external links. Set to FALSE to not add a class.
-        'extClass'      => 'ext',
+        'extClass' => 'ext',
         // Invisible text to display after the link text of external links.
         // This is visible to screen readers, for accessibility purposses.
-        'extLabel'      => t('(link is external)'),
+        'extLabel' => t('(link is external)'),
         // If TRUE, images wrapped in an anchor tag will be treated as
         // external links.
-        'extImgClass'   => FALSE,
+        'extImgClass' => FALSE,
         // Add the icon before or after links. Options: append|prepend.
         'extIconPlacement' => 'append',
         // Exclude all subdomains. Otherwise, just www or no subdomain.
         'extSubdomains' => TRUE,
         // A regular expression for links that you wish to exclude from being
         // considered external. To match the "href" property of links.
-        'extExclude'    => '',
+        'extExclude' => '',
         // A regular expression for internal links that you wish to be
         // considered external. To match the "href" property of links.
-        'extInclude'    => '',
+        'extInclude' => '',
         // Exclude links inside elements matching this comma-separated list
         // of CSS selectors. E.g. #block-block-2 .content, ul.menu.
-        'extCssExclude' => '#header, .breadcrumbs-wrapper',
+        'extCssExclude' => '.region-page-top, #header, .breadcrumbs-wrapper',
         // Only include links inside elements matching this comma-separated
         // list of CSS selectors. E.g. #block-block-2 .content, ul.menu.
-        'extCssExplicit' =>'',
+        'extCssExplicit' => '',
         // Display a pop-up warning when any external link is clicked.
-        'extAlert'      => '',
+        'extAlert' => '',
         // The text in the pop-up, if it is enabled.
-        'extAlertText'  => t('This link will take you to an external web site. We are not responsible for their content.'),
+        'extAlertText' => t('This link will take you to an external web site. We are not responsible for their content.'),
         // The class to add to mailto links. Using 'mailto' will place an icon
         // next to mailto links. Set to FALSE to not add a class.
-        'mailtoClass'   => 'mailto',
+        'mailtoClass' => 'mailto',
         // Invisible text to display after the link text of mailto links.
         // This is visible to screen readers, for accessibility purposses.
-        'mailtoLabel'   => t('(link sends e-mail)'),
+        'mailtoLabel' => t('(link sends e-mail)'),
       ),
     ),
   );
