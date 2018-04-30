@@ -199,6 +199,15 @@ body #page .footer-container #footer .block-title {
   clip: rect(1px, 1px, 1px, 1px);
 }
 
+.element-invisible-off,
+body #page .footer-container #footer #block-bean-follow-us .block-title {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
 /**
  * Styles for the header section.
  */
@@ -929,6 +938,10 @@ body #page .footer-container #footer {
   }
 }
 
+body #page .footer-container #footer .block-title {
+  color: #fff;
+}
+
 body #page .footer-container #footer .block {
   -ms-flex: 1 0 0px;
       flex: 1 0 0;
@@ -978,13 +991,27 @@ body #page .footer-container #footer .block-menu-block ul.menu li.menu__item:las
 }
 
 body #page .footer-container #footer #block-bean-follow-us {
+  position: relative;
   margin: 0 20px;
+}
+
+body #page .footer-container #footer #block-bean-follow-us .block-title {
+  font-size: 0.87rem;
+  font-weight: 300;
+  display: inline-block;
+  margin: -5px 0 15px;
+  padding: 0;
+  vertical-align: top;
 }
 
 @media (min-width: 840px) {
   body #page .footer-container #footer #block-bean-follow-us {
     text-align: right;
   }
+}
+
+body #page .footer-container #footer #block-bean-follow-us .content {
+  display: inline-block;
 }
 
 body #page .footer-container #footer #block-bean-follow-us .field-name-field-bean-text {
@@ -1023,12 +1050,15 @@ body #page .footer-container #footer #block-bean-follow-us .field-name-field-bea
 body #page .footer-container #footer #block-bean-follow-us .field-name-field-bean-text .field-items .helpline {
   text-align: left;
   margin-top: 25px;
+  margin-left: -50px;
 }
 
 @media (min-width: 480px) {
   body #page .footer-container #footer #block-bean-follow-us .field-name-field-bean-text .field-items .helpline {
+    position: absolute;
     text-align: right;
     margin-top: -15px;
+    right: 0;
   }
 }
 
@@ -2206,7 +2236,7 @@ a#edit-cancel {
 }
 
 #main .entity-bean.bean-link a.wrapper-link:hover, #main .entity-bean.bean-link a.wrapper-link:focus {
-  background: #12355f;
+  background: #161e45;
 }
 
 #main .entity-bean.bean-link .field-name-field-block-category {

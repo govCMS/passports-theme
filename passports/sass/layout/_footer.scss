@@ -24,6 +24,7 @@ body {
         }
         .block-title {
           @extend %element-invisible;
+          color: $primary-white;
         }
         .block {
           flex: 1 0 0;
@@ -60,10 +61,23 @@ body {
           }
         }
         #block-bean-follow-us {
+          position: relative;
+          .block-title {
+            @extend %element-invisible-off;
+            font-size: 0.87rem;
+            font-weight: 300;
+            display: inline-block;
+            margin: -5px 0 15px;
+            padding: 0;
+            vertical-align: top;
+          }
           @include breakpoint(smedium) {
             text-align: right;
           }
           margin: 0 20px;
+          .content {
+            display: inline-block;
+          }
           .field-name-field-bean-text {
             margin: 0;
             p {
@@ -98,9 +112,12 @@ body {
               .helpline {
                 text-align: left;
                 margin-top: 25px;
+                margin-left: -50px;
                 @include breakpoint(xsmall) {
+                  position: absolute;
                   text-align: right;
                   margin-top: -15px;
+                  right: 0;
                 }
                 @include breakpoint(smedium) {
                   padding-top: 20px;

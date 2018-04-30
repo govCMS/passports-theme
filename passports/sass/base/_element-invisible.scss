@@ -7,3 +7,8 @@
 %element-invisible {
   @include element-invisible;
 }
+
+.element-invisible-off,
+%element-invisible-off {
+  @include element-invisible-off;
+}
