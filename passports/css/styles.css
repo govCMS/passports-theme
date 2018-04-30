@@ -1569,6 +1569,7 @@ html #page .node-news-article.view-mode-full .field-name-field-news-date {
   display: inline-block;
   vertical-align: middle;
   padding-right: 5px;
+  width: auto;
 }
 
 /**

@@ -608,6 +608,7 @@ function passports_page_alter(&$page) {
   }
 
   // Replicate the external link module's functionality.
+  // Currenlty we're using the JS from version 7.x-1.20.
   // See https://www.drupal.org/project/extlink
   $page['page_bottom']['#attached']['js'][] = array(
     'type' => 'file',
