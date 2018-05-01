@@ -637,6 +637,9 @@ function passports_page_alter(&$page) {
         // external links.
         'extImgClass' => FALSE,
         // Add the icon before or after links. Options: append|prepend.
+        // Note: This setting will not do anything until we can update to the JS
+        // from version 7.19+ of the extlink module, which is not yet stable.
+        // @see https://www.drupal.org/project/extlink/issues/2914838
         'extIconPlacement' => 'append',
         // Exclude all subdomains. Otherwise, just www or no subdomain.
         'extSubdomains' => TRUE,

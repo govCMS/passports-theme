@@ -1821,7 +1821,6 @@ body.cke_editable table tbody th {
   margin: 0;
   padding: 20px;
   border-left: 1px solid #269ed1;
-  border-bottom: 1px solid #269ed1;
   background-color: #161e45;
 }
 
@@ -1924,6 +1923,7 @@ body.cke_editable table tbody th {
   text-decoration: none;
   display: inline-block;
   padding: 20px;
+  min-height: 57px;
   width: calc(100% - 57px);
 }
 
@@ -2175,7 +2175,8 @@ a#edit-cancel {
   background-color: #fff;
 }
 
-#main .entity-bean.bean-basic h3.bean-title {
+#main .entity-bean.bean-basic h2.block-title, #page #main .entity-bean.bean-basic form.webform-client-form fieldset.webform-component-fieldset legend span.block-title.fieldset-legend, #page #main form.webform-client-form fieldset.webform-component-fieldset legend .entity-bean.bean-basic span.block-title.fieldset-legend,
+#main .entity-bean.bean-basic h3.block-title {
   width: 100%;
   font-size: 1rem;
   background-color: #161e45;
@@ -2217,7 +2218,8 @@ a#edit-cancel {
   margin-bottom: 5px;
 }
 
-#main .entity-bean.bean-link h3.bean-title {
+#main .entity-bean.bean-link h2.block-title, #page #main .entity-bean.bean-link form.webform-client-form fieldset.webform-component-fieldset legend span.block-title.fieldset-legend, #page #main form.webform-client-form fieldset.webform-component-fieldset legend .entity-bean.bean-link span.block-title.fieldset-legend,
+#main .entity-bean.bean-link h3.block-title {
   color: #fff;
   padding: 20px 0;
   margin: 0 20px;
@@ -2277,7 +2279,8 @@ a#edit-cancel {
   width: 100%;
 }
 
-#main .entity-bean.bean-image h3.bean-title {
+#main .entity-bean.bean-image h2.block-title, #page #main .entity-bean.bean-image form.webform-client-form fieldset.webform-component-fieldset legend span.block-title.fieldset-legend, #page #main form.webform-client-form fieldset.webform-component-fieldset legend .entity-bean.bean-image span.block-title.fieldset-legend,
+#main .entity-bean.bean-image h3.block-title {
   width: 100%;
   font-size: 1rem;
   background-color: #161e45;
@@ -2316,7 +2319,8 @@ a#edit-cancel {
   margin: 0;
 }
 
-#main .entity-bean.bean-video h3.bean-title {
+#main .entity-bean.bean-video h2.block-title, #page #main .entity-bean.bean-video form.webform-client-form fieldset.webform-component-fieldset legend span.block-title.fieldset-legend, #page #main form.webform-client-form fieldset.webform-component-fieldset legend .entity-bean.bean-video span.block-title.fieldset-legend,
+#main .entity-bean.bean-video h3.block-title {
   width: 100%;
   font-size: 1rem;
   background-color: #161e45;

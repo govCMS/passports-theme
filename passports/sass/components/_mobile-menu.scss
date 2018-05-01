@@ -81,7 +81,6 @@
           margin: 0;
           padding: 20px;
           border-left: 1px solid $quarternary-aqua;
-          border-bottom: 1px solid $quarternary-aqua;
           background-color: $primary-dark-blue;
           &:hover,
           &:focus {
@@ -168,6 +167,7 @@
             text-decoration: none;
             display: inline-block;
             padding: 20px;
+            min-height: 57px;
             width: calc(100% - 57px);
             &:hover,
             &:focus {
