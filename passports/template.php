@@ -227,7 +227,63 @@ function passports_preprocess_panels_pane(&$variables, $hook) {
  */
 function passports_preprocess_search_api_page_result(&$variables, $hook) {
   $item = $variables['item'];
-  
+
+  // If we have no exceprt, the default output of the Search API Pages module
+  // is not great. So override it.
+  if (empty($variables['result']['excerpt'])) {
+    // Since we don't have smart trim or similar, then just using the node
+    // teaser or other view mode is not useful, since the media module or a
+    // content editor might add a whole bunch of HTML tags in the start that
+    // break useful truncation of content.
+    // So replicate the default behaviour from search_api_pages and just strip
+    // out some markup.
+    // @see template_preprocess_search_api_page_result().
+    $index = $variables['index'];
+    $item = $variables['item'];
+    $wrapper = $index->entityWrapper($item, FALSE);
+
+    $fields = $index->options['fields'];
+    $fields = array_intersect_key($fields, drupal_map_assoc($index->getFulltextFields()));
+    $fields = search_api_extract_fields($wrapper, $fields);
+    $text = '';
+    $length = 0;
+    foreach ($fields as $field_name => $field) {
+      if (search_api_is_list_type($field['type']) || !isset($field['value'])) {
+        continue;
+      }
+      $val_length = drupal_strlen($field['value']);
+      if ($val_length > $length) {
+        $text = $field['value'];
+        $length = $val_length;
+
+        $format = NULL;
+        if (($pos = strrpos($field_name, ':')) && substr($field_name, $pos + 1) == 'value') {
+          $tmp = $wrapper;
+          try {
+            foreach (explode(':', substr($field_name, 0, $pos)) as $part) {
+              if (!isset($tmp->$part)) {
+                $tmp = NULL;
+              }
+              $tmp = $tmp->$part;
+            }
+          }
+          catch (EntityMetadataWrapperException $e) {
+            $tmp = NULL;
+          }
+          if ($tmp && $tmp->type() == 'text_formatted' && isset($tmp->format)) {
+            $format = $tmp->format->value();
+          }
+        }
+      }
+    }
+    if ($text && function_exists('text_summary')) {
+      // Strip markup out so we don't get crazy results.
+      $text = filter_xss($text, array('em', 'strong'));
+      $text = text_summary($text, $format);
+      $variables['snippet'] = $text;
+    }
+  }
+
   // Do our own info array.
   $info = array();
   $info['date'] = '<span class="last-updated"><span class="label">' . t('Last updated: ') . '</span>' . format_date($item->changed, 'govcms_month_day_year') . '</span>';
