@@ -2043,6 +2043,13 @@ input[type=image].webform-calendar {
   vertical-align: middle;
 }
 
+a.button span.ext,
+.form-submit span.ext {
+  background: none;
+  width: 1px;
+  padding: 0;
+}
+
 #search-api-page-search-form .form-submit {
   width: auto;
 }

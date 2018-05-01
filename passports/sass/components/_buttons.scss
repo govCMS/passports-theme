@@ -46,6 +46,13 @@ input[type=image] {
 a.button,
 .form-submit {
   @extend button;
+  // Styling to remove the external links icon from button links,
+  // but still allow the hidden screenreader text to be read.
+  span.ext {
+    background: none;
+    width: 1px;
+    padding: 0;
+  }
 }
 
 #search-api-page-search-form {
