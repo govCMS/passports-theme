@@ -75,4 +75,9 @@
       display: inline;
     }
   }
+  &.media-original {
+    img {
+      width: auto;
+    }
+  }
 }

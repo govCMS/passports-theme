@@ -758,6 +758,10 @@ blockquote {
   display: inline;
 }
 
+.media.media-original img {
+  width: auto;
+}
+
 /**
  * Styling of the tables on the site.
  */
@@ -2100,6 +2104,7 @@ a#edit-cancel {
 
 #main .entity-bean a:hover, #main .entity-bean a:focus {
   font-weight: 450;
+  color: #0086b1;
 }
 
 #main .entity-bean.bean-icon a.wrapper-link {
