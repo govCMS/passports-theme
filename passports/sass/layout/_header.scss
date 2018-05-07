@@ -3,6 +3,9 @@
  */
 
 #header {
+  // For some reason this z-index is required to stop the readspeaker button
+  // overlapping the dropdown menu items.
+  z-index: 101;
   background-color: $primary-purple;
   padding: 0;
   .block-title {
@@ -64,9 +67,9 @@
     display: block;
     visibility: visible;
     background-color: $primary-dark-blue;
-    height: 76px;
+    @include rem(height, 76px);
     @include breakpoint(medium) {
-      height: 60px;
+      @include rem(height, 60px);
     }
     .region-navigation {
       padding: 0px 20px;

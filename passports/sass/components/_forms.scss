@@ -4,10 +4,15 @@
 
 #page {
   #main {
+    .form-item {
+      label {
+        @include rem(font-size, 15px);
+      }
+    }
     form.webform-client-form {
       border: none;
       padding: 0;
-      margin: 20px 0;
+      margin: 20px 0 0;
       overflow: auto;
       color: black;
       fieldset.webform-component-fieldset {
@@ -29,6 +34,18 @@
           }
           .form-item {
             margin: 20px 0;
+            fieldset.form-radios {
+              border: none;
+              padding: 0;
+              margin: 0;
+              legend {
+                padding: 0;
+                border: 0;
+                font-size: 15px;
+                font-weight: bold;
+                color: black;
+              }
+            }
             .form-item {
               margin-right: 10px;
             }
@@ -55,6 +72,15 @@
             }
             .webform-datepicker {
               margin-top: 10px;
+              border: none;
+              padding: 0;
+              margin: 20px 0;
+              legend {
+                padding: 0;
+                font-weight: bold;
+                color: black;
+                margin: 0 10px 10px 0;
+              }
             }
           }
           input {

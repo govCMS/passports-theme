@@ -212,6 +212,7 @@ body #page .footer-container #footer #block-bean-follow-us .block-title {
  * Styles for the header section.
  */
 #header {
+  z-index: 101;
   background-color: #2b3c89;
   padding: 0;
 }
@@ -286,12 +287,14 @@ body #page .footer-container #footer #block-bean-follow-us .block-title {
     visibility: visible;
     background-color: #161e45;
     height: 76px;
+    height: 5.24138rem;
   }
 }
 
 @media (min-width: 1025px) and (min-width: 980px) {
   .region-nav-container {
     height: 60px;
+    height: 4.13793rem;
   }
 }
 
@@ -1041,10 +1044,15 @@ body #page .footer-container #footer #block-bean-follow-us .field-name-field-bea
   margin-bottom: 0;
 }
 
+body #page .footer-container #footer #block-bean-follow-us .field-name-field-bean-text .field-items ul li .media-element-container .content a {
+  display: block;
+}
+
 body #page .footer-container #footer #block-bean-follow-us .field-name-field-bean-text .field-items ul li .media-element-container .content a img {
   max-width: 30px;
+  max-height: 30px;
   width: 30px;
-  margin-bottom: -10px;
+  height: 30px;
 }
 
 body #page .footer-container #footer #block-bean-follow-us .field-name-field-bean-text .field-items ul li .media-element-container .content a:hover img, body #page .footer-container #footer #block-bean-follow-us .field-name-field-bean-text .field-items ul li .media-element-container .content a:focus img {
@@ -1053,7 +1061,7 @@ body #page .footer-container #footer #block-bean-follow-us .field-name-field-bea
 
 body #page .footer-container #footer #block-bean-follow-us .field-name-field-bean-text .field-items .helpline {
   text-align: left;
-  margin-top: 25px;
+  margin-top: 15px;
   margin-left: -50px;
 }
 
@@ -1061,14 +1069,14 @@ body #page .footer-container #footer #block-bean-follow-us .field-name-field-bea
   body #page .footer-container #footer #block-bean-follow-us .field-name-field-bean-text .field-items .helpline {
     position: absolute;
     text-align: right;
-    margin-top: -15px;
+    margin-top: -25px;
     right: 0;
   }
 }
 
 @media (min-width: 840px) {
   body #page .footer-container #footer #block-bean-follow-us .field-name-field-bean-text .field-items .helpline {
-    padding-top: 20px;
+    padding-top: 15px;
     margin-top: 0;
   }
 }
@@ -1436,6 +1444,10 @@ html #page .node-news-article.view-mode-full .field-name-field-news-date {
 #main #search-api-page-search-form .form-type-textfield {
   display: inline-block;
   margin: 0;
+}
+
+#main #search-api-page-search-form .form-type-textfield label {
+  margin: 6px 0;
 }
 
 #main #search-api-page-search-form .form-type-textfield input {
@@ -2047,6 +2059,10 @@ input[type=image].webform-calendar {
   vertical-align: middle;
 }
 
+input[type=image].webform-calendar:hover {
+  background-color: #12355f;
+}
+
 a.button span.ext,
 .form-submit span.ext {
   background: none;
@@ -2060,6 +2076,22 @@ a.button span.ext,
 
 a#edit-cancel {
   margin: 20px;
+}
+
+textarea,
+input.text,
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="reset"],
+input[type="range"],
+input[type="tel"],
+input[type="url"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 
 /**
@@ -2545,10 +2577,15 @@ span.mailto {
 /**
  * Styling for the forms sections of the website.
  */
+#page #main .form-item label {
+  font-size: 15px;
+  font-size: 1.03448rem;
+}
+
 #page #main form.webform-client-form {
   border: none;
   padding: 0;
-  margin: 20px 0;
+  margin: 20px 0 0;
   overflow: auto;
   color: black;
 }
@@ -2579,6 +2616,20 @@ span.mailto {
   margin: 20px 0;
 }
 
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper .form-item fieldset.form-radios {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper .form-item fieldset.form-radios legend {
+  padding: 0;
+  border: 0;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+}
+
 #page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper .form-item .form-item {
   margin-right: 10px;
 }
@@ -2603,6 +2654,16 @@ span.mailto {
 
 #page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper .form-item .webform-datepicker {
   margin-top: 10px;
+  border: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper .form-item .webform-datepicker legend {
+  padding: 0;
+  font-weight: bold;
+  color: black;
+  margin: 0 10px 10px 0;
 }
 
 #page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper input {

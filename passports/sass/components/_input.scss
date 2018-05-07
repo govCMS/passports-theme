@@ -1,0 +1,17 @@
+// Styling for input boxes.
+
+textarea,
+input.text,
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="reset"],
+input[type="range"],
+input[type="tel"],
+input[type="url"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}

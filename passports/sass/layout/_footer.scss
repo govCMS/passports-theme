@@ -94,10 +94,12 @@ body {
                   .media-element-container {
                     margin-bottom: 0;
                     .content a {
+                      display: block;
                       img {
                         max-width: 30px;
+                        max-height: 30px;
                         width: 30px;
-                        margin-bottom: -10px;
+                        height: 30px;
                       }
                       &:hover,
                       &:focus {
@@ -111,16 +113,16 @@ body {
               }
               .helpline {
                 text-align: left;
-                margin-top: 25px;
+                margin-top: 15px;
                 margin-left: -50px;
                 @include breakpoint(xsmall) {
                   position: absolute;
                   text-align: right;
-                  margin-top: -15px;
+                  margin-top: -25px;
                   right: 0;
                 }
                 @include breakpoint(smedium) {
-                  padding-top: 20px;
+                  padding-top: 15px;
                   margin-top: 0;
                 }
                 p::before {

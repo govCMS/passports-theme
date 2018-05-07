@@ -14,7 +14,7 @@
  * font-size of 16px), then the variable below would be 10px.
  */
 
-$font-size-base: 14px;
+$font-size-base: 14.5px;
 $baseline-px: $font-size-base;
 
 @mixin rem($property, $px-values) {
