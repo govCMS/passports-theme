@@ -65,8 +65,8 @@ html {
 
 html h1,
 html h2,
-html #page #main form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend,
-#page #main form.webform-client-form fieldset.webform-component-fieldset legend html span.fieldset-legend,
+html #page #main form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend, #page #main form.webform-client-form fieldset.webform-component-fieldset legend
+html span.fieldset-legend,
 html h3,
 html h4,
 html h5,
@@ -86,10 +86,7 @@ html h1 {
   padding: 0 0 10px;
 }
 
-
-html h2,
-html #page #main form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend,
-#page #main form.webform-client-form fieldset.webform-component-fieldset legend html span.fieldset-legend {
+html h2, html #page #main form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend, #page #main form.webform-client-form fieldset.webform-component-fieldset legend html span.fieldset-legend {
   line-height: 2rem;
   font-size: 2rem;
 }
@@ -801,8 +798,8 @@ table thead tr td:last-child {
 
 table thead tr th p, table thead tr th html #main .media-p, html #main table thead tr th .media-p,
 table thead tr td p,
-table thead tr td html #main .media-p,
-html #main table thead tr td .media-p {
+table thead tr td html #main .media-p, html #main
+table thead tr td .media-p {
   color: #fff;
   margin: 0;
 }
@@ -869,14 +866,14 @@ table.borderless tbody tr td {
 
 table.borderless thead tr th p, table.borderless thead tr th html #main .media-p, html #main table.borderless thead tr th .media-p,
 table.borderless thead tr td p,
-table.borderless thead tr td html #main .media-p,
-html #main table.borderless thead tr td .media-p,
+table.borderless thead tr td html #main .media-p, html #main
+table.borderless thead tr td .media-p,
 table.borderless tbody tr th p,
-table.borderless tbody tr th html #main .media-p,
-html #main table.borderless tbody tr th .media-p,
+table.borderless tbody tr th html #main .media-p, html #main
+table.borderless tbody tr th .media-p,
 table.borderless tbody tr td p,
-table.borderless tbody tr td html #main .media-p,
-html #main table.borderless tbody tr td .media-p {
+table.borderless tbody tr td html #main .media-p, html #main
+table.borderless tbody tr td .media-p {
   color: black;
 }
 
@@ -1333,9 +1330,7 @@ html #page .view-news .view-content .item-list > ol li.views-row {
 }
 
 html #page .view-news .view-content .item-list > ul li.views-row p, html #page .view-news .view-content .item-list > ul li.views-row #main .media-p, html #main #page .view-news .view-content .item-list > ul li.views-row .media-p,
-html #page .view-news .view-content .item-list > ol li.views-row p,
-html #page .view-news .view-content .item-list > ol li.views-row #main .media-p,
-html #main #page .view-news .view-content .item-list > ol li.views-row .media-p {
+html #page .view-news .view-content .item-list > ol li.views-row p, html #page .view-news .view-content .item-list > ol li.views-row #main .media-p, html #main #page .view-news .view-content .item-list > ol li.views-row .media-p {
   margin: 10px 0;
 }
 
@@ -1593,8 +1588,8 @@ html #page .node-news-article.view-mode-full .field-name-field-news-date {
  */
 .page-node h1,
 .page-node h2,
-.page-node #page #main form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend,
-#page #main form.webform-client-form fieldset.webform-component-fieldset legend .page-node span.fieldset-legend,
+.page-node #page #main form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend, #page #main form.webform-client-form fieldset.webform-component-fieldset legend
+.page-node span.fieldset-legend,
 .page-node h3,
 .page-node h4,
 .page-node h5,
@@ -1758,17 +1753,18 @@ body.cke_editable table tbody th {
   color: #fff;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.button,
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .form-submit {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.button, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.form-submit {
   color: #fff;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button a, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.button a, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .form-submit a {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button a, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.button a, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.form-submit a {
   color: #fff;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button,
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.form-submit {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-opener.form-submit {
   display: block;
   padding: 5px;
   width: 30px;
@@ -1777,20 +1773,22 @@ body.cke_editable table tbody th {
   margin: 0 0 0 15px;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button:hover,
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.form-submit:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button:focus,
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.form-submit:focus {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-opener.form-submit:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-opener.form-submit:focus {
   background-color: #1f7fa8;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.form-submit .lines {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-opener.form-submit .lines {
   position: relative;
   display: block;
   width: 20px;
   height: 20px;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines .line, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines .line, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.form-submit .lines .line {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines .line, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines .line, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-opener.form-submit .lines .line {
   display: block;
   background: #fff;
   width: 20px;
@@ -1800,34 +1798,40 @@ body.cke_editable table tbody th {
   transition: all .4s;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines .line.line-1, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines .line.line-1, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.form-submit .lines .line.line-1 {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines .line.line-1, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines .line.line-1, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-opener.form-submit .lines .line.line-1 {
   top: 0;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines .line.line-2, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines .line.line-2, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.form-submit .lines .line.line-2 {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines .line.line-2, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines .line.line-2, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-opener.form-submit .lines .line.line-2 {
   top: 8px;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines .line.line-3, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines .line.line-3, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.form-submit .lines .line.line-3 {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener .lines .line.line-3, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.button .lines .line.line-3, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-opener.form-submit .lines .line.line-3 {
   top: 16px;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener.close .line-1, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.close.button .line-1, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.close.form-submit .line-1 {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener.close .line-1, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.close.button .line-1, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-opener.close.form-submit .line-1 {
   -ms-transform: translateY(8px) translateX(0) rotate(45deg);
       transform: translateY(8px) translateX(0) rotate(45deg);
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener.close .line-2, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.close.button .line-2, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.close.form-submit .line-2 {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener.close .line-2, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.close.button .line-2, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-opener.close.form-submit .line-2 {
   opacity: 0;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener.close .line-3, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.close.button .line-3, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-opener.close.form-submit .line-3 {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-opener.close .line-3, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-opener.close.button .line-3, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-opener.close.form-submit .line-3 {
   -ms-transform: translateY(-8px) translateX(0) rotate(-45deg);
       transform: translateY(-8px) translateX(0) rotate(-45deg);
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button,
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-expander.form-submit {
   position: absolute;
   right: 0;
   top: 0;
@@ -1840,23 +1844,23 @@ body.cke_editable table tbody th {
   background-color: #161e45;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:hover,
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:focus,
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit:focus {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-expander.form-submit:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-expander.form-submit:focus {
   background-color: #0a7888;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:before,
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:after,
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit:after {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-expander.form-submit:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-expander.form-submit:after {
   content: '';
   position: absolute;
   background-color: #fff;
   transition: transform .25s ease-out;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:before,
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit:before {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-expander.form-submit:before {
   top: 33%;
   left: 48%;
   width: 4px;
@@ -1864,8 +1868,8 @@ body.cke_editable table tbody th {
   margin-left: -1px;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:after,
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit:after {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-expander.form-submit:after {
   top: 49%;
   left: 32%;
   width: 20px;
@@ -1873,27 +1877,27 @@ body.cke_editable table tbody th {
   margin-top: -1px;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander.collapse, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.collapse.button,
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.collapse.form-submit {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander.collapse, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.collapse.button, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-expander.collapse.form-submit {
   cursor: pointer;
   background-color: #0086b1;
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander.collapse:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.collapse.button:before,
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.collapse.form-submit:before {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander.collapse:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.collapse.button:before, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-expander.collapse.form-submit:before {
   -ms-transform: rotate(90deg);
       transform: rotate(90deg);
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander.collapse:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.collapse.button:after,
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.collapse.form-submit:after {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander.collapse:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.collapse.button:after, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-expander.collapse.form-submit:after {
   -ms-transform: rotate(180deg);
       transform: rotate(180deg);
 }
 
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:hover,
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:focus,
-.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper .menu-expander.form-submit:focus {
+.region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-expander.form-submit:hover, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper button.menu-expander:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper a.menu-expander.button:focus, .region-mobile-nav-container .region-mobile-nav .menu-block-wrapper
+.menu-expander.form-submit:focus {
   background-color: #1f7fa8;
 }
 
