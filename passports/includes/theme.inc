@@ -25,7 +25,7 @@ function passports_webform_element($variables) {
   $above = !empty($element['#webform_component']['extra']['description_above']);
   $description = array(
     FALSE => '',
-    TRUE => !empty($element['#description']) ? ' <div class="description">' . $element['#description'] . "</div>\n" : '',
+    TRUE => !empty($element['#description']) ? ' <p class="description">' . $element['#description'] . "</p>\n" : '',
   );
 
   // If #children does not contain an element with a matching @id, do not
@@ -187,7 +187,7 @@ function passports_form_element($variables) {
   }
 
   if (!empty($element['#description'])) {
-    $output .= '<div class="description">' . $element['#description'] . "</div>\n";
+    $output .= '<p class="description">' . $element['#description'] . "</p>\n";
   }
 
   $output .= "</div>\n";
@@ -309,7 +309,9 @@ function passports_select($variables) {
   $element = $variables['element'];
   // Check if array already has an empty select option.
   if (!isset($element['#options'][''])) {
-    $element['#options'] = array('' => '') + $element['#options'];
+    // Note that it is not valid to have an empty option so we add some text.
+    $blank_option = $element['#required'] ? t('Please select an option') : '&nbsp;';
+    $element['#options'] = array('' => $blank_option) + $element['#options'];
   }
   element_set_attributes($element, array(
     'id',

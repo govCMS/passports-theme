@@ -46,7 +46,7 @@
   <div id="main">
     <article id="content" class="column" role="main">
 
-      <a id="main-content"></a>
+      <a id="main-content" tabindex="-1"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
         <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>

@@ -2673,26 +2673,18 @@ span.mailto {
   box-sizing: border-box;
 }
 
-#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper input[type=text] {
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper input[type=text],
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper input[type=email],
+#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper input[type=tel] {
   background-color: #fff;
   border: 1px solid black;
   width: 100%;
 }
 
 @media (min-width: 760px) {
-  #page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper input[type=text] {
-    width: 400px;
-  }
-}
-
-#page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper input[type=email] {
-  background-color: #fff;
-  border: 1px solid black;
-  width: 100%;
-}
-
-@media (min-width: 760px) {
-  #page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper input[type=email] {
+  #page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper input[type=text],
+  #page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper input[type=email],
+  #page #main form.webform-client-form fieldset.webform-component-fieldset .fieldset-wrapper input[type=tel] {
     width: 400px;
   }
 }
