@@ -11,9 +11,9 @@
 function passports_webform_element($variables) {
   $element = $variables['element'];
 
-  if ($element['#type'] == 'radios' || $element['#type'] == 'date') {
-    // Don't print title here as we're printing it in a fieldset
-    // in passports_radios() and passports_dates().
+  if (in_array($element['#type'], array('radios', 'date', 'webform_time'))) {
+    // Don't print title here as we're printing it as a fieldset legend in the
+    // respective theme functions of these elements in this file.
     $element['#title_display'] = 'none';
   }
 
@@ -59,67 +59,6 @@ function passports_webform_element($variables) {
 
   $output .= $description[!$above];
   $output .= "</div>\n";
-
-  return $output;
-}
-
-
-/**
- * Theme a webform date element.
- */
-function passports_webform_date($variables) {
-  $element = $variables['element'];
-
-  $required_marker = !empty($element['#required']) ? ' ' . theme('form_required_marker', array(
-    'element' => $element,
-  )) : '';
-
-  $element['year']['#attributes']['class'][] = 'year';
-  $element['month']['#attributes']['class'][] = 'month';
-  $element['day']['#attributes']['class'][] = 'day';
-
-  // Add error classes to all items within the element.
-  if (form_get_error($element)) {
-    $element['year']['#attributes']['class'][] = 'error';
-    $element['month']['#attributes']['class'][] = 'error';
-    $element['day']['#attributes']['class'][] = 'error';
-  }
-
-  // Add HTML5 required attribute, if needed.
-  if ($element['#required']) {
-    $element['year']['#attributes']['required'] = 'required';
-    $element['month']['#attributes']['required'] = 'required';
-    $element['day']['#attributes']['required'] = 'required';
-  }
-
-  $class = array('webform-container-inline');
-  // Add the JavaScript calendar if available (provided by Date module package).
-  if (!empty($element['#datepicker'])) {
-    $class[] = 'webform-datepicker';
-    $calendar_class = array('webform-calendar');
-    if ($element['#start_date']) {
-      $calendar_class[] = 'webform-calendar-start-' . $element['#start_date'];
-    }
-    if ($element['#end_date']) {
-      $calendar_class[] = 'webform-calendar-end-' . $element['#end_date'];
-    }
-    $calendar_class[] = 'webform-calendar-day-' . variable_get('date_first_day', 0);
-
-    $calendar = theme('webform_calendar', array('component' => $element['#webform_component'], 'calendar_classes' => $calendar_class));
-  }
-
-  $output = '';
-  $output .= '<fieldset class="' . implode(' ', $class) . '">';
-  if ($element['#title_display'] == 'element-invisible') {
-    $output .= '<legend class="element-invisible">';
-  } else {
-    $output .= '<legend>'; 
-  }
-  $output .= $element['#title'] . $required_marker;
-  $output .= '</legend>';
-  $output .= drupal_render_children($element);
-  $output .= isset($calendar) ? $calendar : '';
-  $output .= '</fieldset>';
 
   return $output;
 }
@@ -252,6 +191,112 @@ function passports_urlfield($variables) {
   $output = '<input' . drupal_attributes($element['#attributes']) . $required . ' />';
 
   return $output . $extra;
+}
+
+/**
+ * Theme a webform date element.
+ */
+function passports_webform_date($variables) {
+  $element = $variables['element'];
+
+  $required_marker = !empty($element['#required']) ? ' ' . theme('form_required_marker', array(
+    'element' => $element,
+  )) : '';
+
+  $element['year']['#attributes']['class'][] = 'year';
+  $element['month']['#attributes']['class'][] = 'month';
+  $element['day']['#attributes']['class'][] = 'day';
+
+  // Add error classes to all items within the element.
+  if (form_get_error($element)) {
+    $element['year']['#attributes']['class'][] = 'error';
+    $element['month']['#attributes']['class'][] = 'error';
+    $element['day']['#attributes']['class'][] = 'error';
+  }
+
+  // Add HTML5 required attribute, if needed.
+  if ($element['#required']) {
+    $element['year']['#attributes']['required'] = 'required';
+    $element['month']['#attributes']['required'] = 'required';
+    $element['day']['#attributes']['required'] = 'required';
+  }
+
+  $class = array('webform-container-inline');
+  // Add the JavaScript calendar if available (provided by Date module package).
+  if (!empty($element['#datepicker'])) {
+    $class[] = 'webform-datepicker';
+    $calendar_class = array('webform-calendar');
+    if ($element['#start_date']) {
+      $calendar_class[] = 'webform-calendar-start-' . $element['#start_date'];
+    }
+    if ($element['#end_date']) {
+      $calendar_class[] = 'webform-calendar-end-' . $element['#end_date'];
+    }
+    $calendar_class[] = 'webform-calendar-day-' . variable_get('date_first_day', 0);
+
+    $calendar = theme('webform_calendar', array('component' => $element['#webform_component'], 'calendar_classes' => $calendar_class));
+  }
+
+  $output = '';
+  // The webform module specifically looks for a div when applying the calendar
+  // javascript, so keep their div and add the fieldset inside.
+  $output .= '<div class="' . implode(' ', $class) . '">';
+  $output .= '<fieldset class="webform-component-fieldset date-fieldset">';
+  if (!empty($element['#title'])) {
+    if ($element['#title_display'] == 'element-invisible') {
+      $output .= '<legend class="element-invisible">';
+    } else {
+      $output .= '<legend>'; 
+    }
+    $output .= $element['#title'] . $required_marker;
+    $output .= '</legend>';
+  }
+  $output .= drupal_render_children($element);
+  $output .= isset($calendar) ? $calendar : '';
+  $output .= '</fieldset>';
+  $output .= '</div>';
+
+  return $output;
+}
+
+/**
+ * Theme a webform time element.
+ */
+function passports_webform_time($variables) {
+  $element = $variables['element'];
+  $element['hour']['#attributes']['class'][] = 'hour';
+  $element['minute']['#attributes']['class'][] = 'minute';
+
+  // Add error classes to all items within the element.
+  if (form_get_error($element)) {
+    $element['hour']['#attributes']['class'][] = 'error';
+    $element['minute']['#attributes']['class'][] = 'error';
+  }
+
+  // Add HTML5 required attribute, if needed.
+  if ($element['#required']) {
+    $element['hour']['#attributes']['required'] = 'required';
+    $element['minute']['#attributes']['required'] = 'required';
+    if (!empty($element['ampm'])) {
+      $element['ampm']['am']['#attributes']['required'] = 'required';
+      $element['ampm']['pm']['#attributes']['required'] = 'required';
+    }
+  }
+  $output = '';
+  $output .= '<fieldset class="webform-container-inline webform-component-fieldset time-fieldset webform-timefield">';
+  if (!empty($element['#title'])) {
+    if ($element['#title_display'] == 'element-invisible') {
+      $output .= '<legend class="element-invisible">';
+    } else {
+      $output .= '<legend>';
+    }
+    $output .= $element['#title'] . $required_marker;
+    $output .= '</legend>';
+  }
+  $output .= drupal_render($element['hour']) . drupal_render($element['minute']) . drupal_render($element['ampm']);
+  $output .= '</fieldset>';
+
+  return $output;
 }
 
 /**
@@ -443,13 +488,15 @@ function passports_radios($variables) {
   }
   $attributes['class'] .= ' radios-fieldset';
   $output = '<fieldset ' . drupal_attributes($attributes) . '>';
-  if ($element['#title_display'] == 'element-invisible') {
-    $output .= '<legend class="element-invisible">';
-  } else {
-    $output .= '<legend>'; 
+  if (!empty($element['#title'])) {
+    if ($element['#title_display'] == 'element-invisible') {
+      $output .= '<legend class="element-invisible">';
+    } else {
+      $output .= '<legend>'; 
+    }
+    $output .= $element['#title'] . $required_marker;
+    $output .= '</legend>';
   }
-  $output .= $element['#title'] . $required_marker;
-  $output .= '</legend>';
   $output .= !empty($element['#children']) ? $element['#children'] : '';
   $output .= '</fieldset>';
   return $output;
