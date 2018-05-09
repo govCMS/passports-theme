@@ -641,15 +641,10 @@ function passports_webform_element_text($variables) {
   // Add the value to the output. Add a newline before the response if needed.
   $output .= (strpos($value, "\n") === FALSE ? ' ' : "\n") . $value;
 
-  // Indent fieldsets.
+  // Add an extra line break at the end of a fieldset.
+  // Indenting of fields in fieldsets has been removed because that makes it
+  // frustrating to copy & paste into something else.
   if ($is_group) {
-    $lines = explode("\n", $output);
-    foreach ($lines as $number => $line) {
-      if (strlen($line)) {
-        $lines[$number] = '  ' . $line;
-      }
-    }
-    $output = implode("\n", $lines);
     $output .= "\n";
   }
 
