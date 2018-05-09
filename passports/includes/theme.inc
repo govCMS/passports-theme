@@ -655,8 +655,6 @@ function passports_webform_element_text($variables) {
 
   if ($output) {
     $output .= "\n";
-    // Add an additional line break to enhance readability.
-    $output .= "\n";
   }
 
   return $output;
