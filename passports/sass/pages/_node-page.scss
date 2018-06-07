@@ -2,20 +2,7 @@
  * Styling for node pages of type "page".
  */
 
-// This is targeting h tags that aren't on the home page
-// to give them a heavier font weight.
-// This is to better support the pages in languages other
-// than English, which only display correctly in a few
-// weights with the font being used.
 .page-node {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: 300;
-  }  
   a {
     font-weight: 400;
     &:hover,

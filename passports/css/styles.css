@@ -87,13 +87,13 @@ html h1 {
 }
 
 html h2, html #page #main form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend, #page #main form.webform-client-form fieldset.webform-component-fieldset legend html span.fieldset-legend {
-  line-height: 2rem;
-  font-size: 2rem;
+  line-height: 2.4rem;
+  font-size: 2.4rem;
 }
 
 html h3 {
-  line-height: 1.75rem;
-  font-size: 1.75rem;
+  line-height: 1.85rem;
+  font-size: 1.85rem;
 }
 
 html h4 {
@@ -102,14 +102,15 @@ html h4 {
 }
 
 html h5 {
-  line-height: 1.25rem;
-  font-size: 1.25rem;
+  line-height: 1.15rem;
+  font-size: 1.15rem;
+  font-weight: 600;
 }
 
 html h6 {
-  line-height: 1rem;
-  font-size: 1rem;
-  font-weight: 600;
+  line-height: 0.95rem;
+  font-size: 0.95rem;
+  font-weight: 700;
 }
 
 html p, html #main .media-p {
@@ -1586,17 +1587,6 @@ html #page .node-news-article.view-mode-full .field-name-field-news-date {
 /**
  * Styling for node pages of type "page".
  */
-.page-node h1,
-.page-node h2,
-.page-node #page #main form.webform-client-form fieldset.webform-component-fieldset legend span.fieldset-legend, #page #main form.webform-client-form fieldset.webform-component-fieldset legend
-.page-node span.fieldset-legend,
-.page-node h3,
-.page-node h4,
-.page-node h5,
-.page-node h6 {
-  font-weight: 300;
-}
-
 .page-node a {
   font-weight: 400;
 }
